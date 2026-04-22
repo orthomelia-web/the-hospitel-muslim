@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://orthomelia-web.github.io/the-hospitel-muslim/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://orthomelia-web.github.io/the-hospitel-muslim/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orthomelia-web.github.io/the-hospitel-muslim/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orthomelia-web.github.io/the-hospitel-muslim/"/>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/exterior.jpg</image:loc>
+      <image:title>THE HOSPITEL by Dr. — Muslim-Friendly 外観</image:title>
+      <image:caption>東京・墨田区東向島のムスリムフレンドリー1棟貸し邸宅ホテル 外観</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/bedroom.jpg</image:loc>
+      <image:title>寝室</image:title>
+      <image:caption>1棟貸しの邸宅の寝室</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/bath.jpg</image:loc>
+      <image:title>プライベート風呂</image:title>
+      <image:caption>邸宅内のプライベート風呂</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/tatami.jpg</image:loc>
+      <image:title>礼拝スペース</image:title>
+      <image:caption>畳の間を活用した静謐な礼拝スペース (キブラ表示)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/lounge.jpg</image:loc>
+      <image:title>ハラル対応キッチン</image:title>
+      <image:caption>ハラル専用食器・調理器具・冷蔵庫・コンロを備えた自炊可能キッチン</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel-muslim/founder.jpg</image:loc>
+      <image:title>Founder · Dr. Yusuke Sato</image:title>
+      <image:caption>Founder · Doctor of Medicine — 佐藤雄亮</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orthomelia-web.github.io/the-hospitel-muslim/sitemap.xml

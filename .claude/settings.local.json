@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m http.server 8005)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8005/)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -sL -o dawn-new.jpg \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2400&q=85\")",
+      "Bash(curl -sL -o booking-bg.jpg \"https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=2400&q=85\")",
+      "Bash(curl -sL -o booking-bg.jpg \"https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=2400&q=85\")",
+      "Bash(curl *)",
+      "Bash(wait)",
+      "WebFetch(domain:umito.jp)",
+      "WebFetch(domain:www.dr-fudousan.jp)",
+      "Skill(update-config)",
+      "Bash(powershell.exe -NoProfile -Command \"[System.Media.SystemSounds]::Asterisk.Play\\(\\); Start-Sleep -Milliseconds 600\")",
+      "Bash(echo \"exit=$?\")",
+      "Bash(python3 *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(jobs -l)",
+      "WebFetch(domain:ouraring.com)",
+      "Bash(mv oura.jpg oura-old.jpg)",
+      "Bash(mv oura-card.jpg oura.jpg)",
+      "Bash(mv detox.jpg detox-old.jpg)",
+      "Bash(mv detox-new.jpg detox.jpg)",
+      "Bash(git rm *)",
+      "WebFetch(domain:tokitoki-patina.jp)",
+      "Bash(grep -oE \"\\\\.kv[a-z_-]*\\\\{[^}]{0,500}\\\\}\" \"/home/yu_lu/.claude/projects/-mnt-c-Users-yu-lu-OneDrive--------develop-the-hospitel/45757e25-d898-4142-a635-f22911014e64/tool-results/bajbsgita.txt\")",
+      "Bash(grep -oE \"\\\\.about[a-z_-]*\\\\{[^}]{0,400}\\\\}\" \"/home/yu_lu/.claude/projects/-mnt-c-Users-yu-lu-OneDrive--------develop-the-hospitel/45757e25-d898-4142-a635-f22911014e64/tool-results/bajbsgita.txt\")",
+      "Bash(grep -oE \"@media[^{]*min-width[^{]*\\\\{[^}]{0,50}|@media[^{]*max-width[^{]*\\\\{[^}]{0,50}\" \"/home/yu_lu/.claude/projects/-mnt-c-Users-yu-lu-OneDrive--------develop-the-hospitel/45757e25-d898-4142-a635-f22911014e64/tool-results/bajbsgita.txt\")",
+      "Bash(grep -oE \"html\\\\s*\\\\{[^}]{0,200}\\\\}|body\\\\s*\\\\{[^}]{0,200}\\\\}\" \"/home/yu_lu/.claude/projects/-mnt-c-Users-yu-lu-OneDrive--------develop-the-hospitel/45757e25-d898-4142-a635-f22911014e64/tool-results/bajbsgita.txt\")",
+      "WebFetch(domain:note.com)",
+      "Read(//home/yu_lu/.claude/**)",
+      "Bash(powershell.exe -NoProfile -Command \"[console]::beep\\(880,200\\); [console]::beep\\(660,200\\)\")",
+      "Bash(mkdir -p \"/mnt/c/Users/yu_lu/OneDrive/デスクトップ/develop/the-hospitel-muslim\")",
+      "Bash(cp -r /mnt/c/Users/yu_lu/OneDrive/デスクトップ/develop/the-hospitel/. /mnt/c/Users/yu_lu/OneDrive/デスクトップ/develop/the-hospitel-muslim/)"
+    ]
+  }
+}
