@@ -469,8 +469,13 @@
   .options-head{text-align:center;margin-bottom:4rem}
   .options-head .eyebrow{justify-content:center}
   .options-head .eyebrow::before{display:none}
-  .options-flex{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-  .opt{padding:5rem 2.8rem;border:1px solid var(--line);background:transparent;position:relative;transition:border-color .4s;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+  .options-lead{max-width:60rem;margin:1.5rem auto 0;color:var(--ink-sub);font-size:1rem;line-height:2;font-weight:500}
+  .options-flex{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .opt{padding:3.5rem 2.2rem;border:1px solid var(--line);background:transparent;position:relative;transition:border-color .4s;min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+  .opt-herbal::before{content:"";position:absolute;inset:0;background-image:url('quality-sleep.jpg');background-size:cover;background-position:center;background-attachment:fixed;z-index:-2}
+  .opt-specs{list-style:none;padding:0;margin:1.4rem 0 0;display:flex;flex-direction:column;gap:.35rem}
+  .opt-specs li{position:relative;padding-left:1.2rem;font-family:var(--serif-jp);font-size:.82rem;line-height:1.65;color:var(--ink-sub);font-weight:500}
+  .opt-specs li::before{content:"";position:absolute;left:0;top:.7em;width:.6rem;height:1px;background:var(--gold);opacity:.8}
   .opt::before{content:"";position:absolute;inset:0;background-size:cover;background-repeat:no-repeat;background-attachment:fixed;z-index:-2}
   .opt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,16,.55) 0%,rgba(13,13,16,.78) 55%,rgba(13,13,16,.92) 100%);z-index:-1;transition:background .4s;pointer-events:none}
   .opt-detox::before{background-image:url('detox.jpg');background-position:center 45%}
@@ -483,7 +488,8 @@
   .opt p{color:var(--ink-sub);font-size:.95rem;line-height:2;font-weight:500}
   .opt .icon{position:absolute;top:2.2rem;right:2.2rem;color:var(--gold);opacity:.45}
   .opt .icon svg{width:32px;height:32px}
-  @media (max-width:700px){.options{padding:3rem 1.2rem}.options-flex{grid-template-columns:1fr 1fr;gap:.6rem}.opt{padding:1.8rem 1rem;min-height:200px;justify-content:flex-start}.opt .icon{top:.8rem;right:.8rem}.opt .icon svg{width:22px;height:22px}}
+  @media (max-width:1100px){.options-flex{grid-template-columns:1fr 1fr}}
+  @media (max-width:700px){.options{padding:3rem 1.2rem}.options-lead{font-size:.88rem;line-height:1.85;margin-top:1rem}.options-flex{grid-template-columns:1fr;gap:1rem}.opt{padding:1.8rem 1.2rem;min-height:auto;justify-content:flex-start}.opt .icon{top:.8rem;right:.8rem}.opt .icon svg{width:22px;height:22px}.opt-specs{margin-top:1rem;gap:.3rem}.opt-specs li{font-size:.8rem;line-height:1.7;padding-left:1rem}}
 
   /* JOURNAL (interview / doctor's voice) */
   .journal{padding:10rem 3rem;background:var(--bg);position:relative;overflow:hidden}
@@ -955,17 +961,46 @@
     <div class="options-head">
       <div class="eyebrow">Doctor-Curated Sleep Design</div>
       <h2 class="h-display" data-i18n="options.h2">祈りに、<em>深い眠り</em>を添えて。</h2>
+      <p class="options-lead" data-i18n="options.lead">
+        ムスリムの皆さまへのおもてなしに、医学の英知を重ねて。光・寝具・湯・茶——滞在中の夜を構成するひとつひとつに、医師の視点で徹底的な拘りを宿らせました。
+      </p>
     </div>
     <div class="options-flex">
       <div class="opt opt-detox">
         <div class="no">Sleep 01</div>
-        <h3 data-i18n="options.01.h3">医師監修の<br />安眠空間</h3>
-        <p data-i18n="options.01.p">サーカディアン照明、医師が厳選した高品質寝具、墨色の静謐な内装。体内時計に寄り添う光と、身体に負担のかからない寝具で、旅の疲れを深い眠りで解き放ちます。</p>
+        <h3 data-i18n="options.01.h3">サーカディアン<br />照明と静謐内装</h3>
+        <p data-i18n="options.01.p">体内時計に寄り添う光で、自然な入眠と目覚めへ。視覚的ノイズを削ぎ落とした墨色の内装が、脳の覚醒を静かに鎮めます。</p>
+        <ul class="opt-specs">
+          <li data-i18n="options.01.s1">色温度 2000K–6500K 可変照明</li>
+          <li data-i18n="options.01.s2">朝・昼・夕・夜 4 シーン自動制御</li>
+          <li data-i18n="options.01.s3">起床時は光で目覚めるウェイクアップライト</li>
+          <li data-i18n="options.01.s4">墨黒 × 和紙 × 無垢材の三素材構成</li>
+          <li data-i18n="options.01.s5">寝室照度 10–50 ルクスの間接光</li>
+        </ul>
       </div>
       <div class="opt opt-oura">
         <div class="no">Sleep 02</div>
-        <h3 data-i18n="options.02.h3">ハラル対応<br />薬膳風呂・薬膳茶</h3>
-        <p data-i18n="options.02.p">植物性生薬のみを使用した薬膳風呂 (ノンアルコール) と、安眠サポートの薬膳茶 (ノンカフェイン・ノンアルコール)。ムスリムの皆さまにも安心してお楽しみいただけます。</p>
+        <h3 data-i18n="options.02.h3">医師厳選の<br />高品質寝具</h3>
+        <p data-i18n="options.02.p">マットレス、枕、シーツのすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへ。</p>
+        <ul class="opt-specs">
+          <li data-i18n="options.02.s1">高密度ポケットコイル マットレス</li>
+          <li data-i18n="options.02.s2">高さ 5 段階 × 形状 4 型の枕から最適選定</li>
+          <li data-i18n="options.02.s3">オーガニックコットン 60 番手シーツ</li>
+          <li data-i18n="options.02.s4">体圧分散・寝姿勢最適化</li>
+          <li data-i18n="options.02.s5">医師監修のベッディング プロトコル</li>
+        </ul>
+      </div>
+      <div class="opt opt-herbal">
+        <div class="no">Sleep 03</div>
+        <h3 data-i18n="options.03.h3">ハラル対応<br />薬膳風呂・薬膳茶</h3>
+        <p data-i18n="options.03.p">植物性生薬のみの薬膳風呂と、ノンカフェイン・ノンアルコールの薬膳茶。身体の芯から、安眠へと誘います。</p>
+        <ul class="opt-specs">
+          <li data-i18n="options.03.s1">当帰・川芎・生姜など 7 種の植物性生薬</li>
+          <li data-i18n="options.03.s2">就寝 90 分前の入浴プログラム</li>
+          <li data-i18n="options.03.s3">湯温 38–40℃ の低温長湯設計</li>
+          <li data-i18n="options.03.s4">酸棗仁湯ベースの夜用薬膳茶 (ノンカフェイン)</li>
+          <li data-i18n="options.03.s5">漢方医監修の持ち帰りギフト</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1162,10 +1197,28 @@
       "sleep.labelClose": "閉じる",
 
       "options.h2": "祈りに、<em>深い眠り</em>を添えて。",
-      "options.01.h3": "医師監修の<br />安眠空間",
-      "options.01.p": "サーカディアン照明、医師が厳選した高品質寝具、墨色の静謐な内装。体内時計に寄り添う光と、身体に負担のかからない寝具で、旅の疲れを深い眠りで解き放ちます。",
-      "options.02.h3": "ハラル対応<br />薬膳風呂・薬膳茶",
-      "options.02.p": "植物性生薬のみを使用した薬膳風呂 (ノンアルコール) と、安眠サポートの薬膳茶 (ノンカフェイン・ノンアルコール)。ムスリムの皆さまにも安心してお楽しみいただけます。",
+      "options.lead": "ムスリムの皆さまへのおもてなしに、医学の英知を重ねて。光・寝具・湯・茶——滞在中の夜を構成するひとつひとつに、医師の視点で徹底的な拘りを宿らせました。",
+      "options.01.h3": "サーカディアン<br />照明と静謐内装",
+      "options.01.p": "体内時計に寄り添う光で、自然な入眠と目覚めへ。視覚的ノイズを削ぎ落とした墨色の内装が、脳の覚醒を静かに鎮めます。",
+      "options.01.s1": "色温度 2000K–6500K 可変照明",
+      "options.01.s2": "朝・昼・夕・夜 4 シーン自動制御",
+      "options.01.s3": "起床時は光で目覚めるウェイクアップライト",
+      "options.01.s4": "墨黒 × 和紙 × 無垢材の三素材構成",
+      "options.01.s5": "寝室照度 10–50 ルクスの間接光",
+      "options.02.h3": "医師厳選の<br />高品質寝具",
+      "options.02.p": "マットレス、枕、シーツのすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへ。",
+      "options.02.s1": "高密度ポケットコイル マットレス",
+      "options.02.s2": "高さ 5 段階 × 形状 4 型の枕から最適選定",
+      "options.02.s3": "オーガニックコットン 60 番手シーツ",
+      "options.02.s4": "体圧分散・寝姿勢最適化",
+      "options.02.s5": "医師監修のベッディング プロトコル",
+      "options.03.h3": "ハラル対応<br />薬膳風呂・薬膳茶",
+      "options.03.p": "植物性生薬のみの薬膳風呂と、ノンカフェイン・ノンアルコールの薬膳茶。身体の芯から、安眠へと誘います。",
+      "options.03.s1": "当帰・川芎・生姜など 7 種の植物性生薬",
+      "options.03.s2": "就寝 90 分前の入浴プログラム",
+      "options.03.s3": "湯温 38–40℃ の低温長湯設計",
+      "options.03.s4": "酸棗仁湯ベースの夜用薬膳茶 (ノンカフェイン)",
+      "options.03.s5": "漢方医監修の持ち帰りギフト",
 
       "journal.h2": "医師が語る、<br /><em>もてなし</em>のかたち。",
       "journal.quote": "信仰も、眠りも、旅の途中で手放さなくていい——",
@@ -1271,10 +1324,28 @@
       "sleep.labelClose": "Close",
 
       "options.h2": "With prayer, <em>deep sleep</em>.",
-      "options.01.h3": "Doctor-Curated<br />Sleep Space",
-      "options.01.p": "Circadian lighting, physician-selected premium bedding, and a composed interior in deep ink tones. Light tuned to your body clock, bedding tuned to your body — travel weariness released into true, deep sleep.",
-      "options.02.h3": "Halal-friendly<br />Medicinal Bath &amp; Herbal Tea",
-      "options.02.p": "A medicinal bath drawn from plant-based kampo herbs (alcohol-free), and a sleep-supporting herbal tea (caffeine-free &amp; alcohol-free). Both prepared with Muslim guests in mind.",
+      "options.lead": "On top of Muslim-friendly hospitality, the wisdom of medicine. Light, bedding, bath, tea — every element shaping the night has been layered with a doctor's careful intention.",
+      "options.01.h3": "Circadian Lighting<br />&amp; Composed Interior",
+      "options.01.p": "Light tuned to your body clock, for natural sleep and waking. A deep-ink interior strips visual noise and gently settles the waking mind.",
+      "options.01.s1": "Adjustable color temperature, 2000K–6500K",
+      "options.01.s2": "Four automated scenes: morning, midday, evening, night",
+      "options.01.s3": "Wake-up light — stirred awake by light, not sound",
+      "options.01.s4": "Three materials: ink-black, washi paper, solid wood",
+      "options.01.s5": "Bedroom illuminance: 10–50 lux, indirect",
+      "options.02.h3": "Physician-Curated<br />Premium Bedding",
+      "options.02.p": "Every mattress, pillow, and linen chosen from a medical perspective. Pressure distribution and sleep posture are tuned so the body carries no burden into the night.",
+      "options.02.s1": "High-density pocket-coil mattress",
+      "options.02.s2": "Pillows selected from 5 heights and 4 shapes",
+      "options.02.s3": "60-count organic cotton sheets",
+      "options.02.s4": "Optimized pressure distribution &amp; sleeping posture",
+      "options.02.s5": "Doctor-curated bedding protocol",
+      "options.03.h3": "Halal-friendly<br />Medicinal Bath &amp; Herbal Tea",
+      "options.03.p": "A medicinal bath drawn from plant-based kampo herbs, and a sleep-supporting herbal tea — caffeine-free, alcohol-free. Rest drawn deep from the body's core.",
+      "options.03.s1": "Seven plant-based herbs, incl. angelica, cnidium, ginger",
+      "options.03.s2": "Bathing protocol: 90 minutes before bedtime",
+      "options.03.s3": "Long, warm soak at 38–40°C",
+      "options.03.s4": "Evening blend based on sansohnin-to (caffeine-free)",
+      "options.03.s5": "Take-home gift curated by a kampo physician",
 
       "journal.h2": "A doctor on<br /><em>hospitality</em>.",
       "journal.quote": "Neither faith nor sleep should be set aside on a journey —",
