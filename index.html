@@ -702,6 +702,14 @@
   .booking .eyebrow::before{display:none}
   .booking h2{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.8rem,3.6vw,3rem);letter-spacing:.2em;line-height:1.6;margin-bottom:2rem;color:#fbf8f1;text-shadow:0 2px 14px rgba(0,0,0,.7)}
   .booking p{color:var(--ink-sub);font-size:1rem;line-height:2.1;margin-bottom:3rem;font-weight:500}
+  .book-widget{display:flex;gap:1px;justify-content:center;flex-wrap:wrap;margin:0 auto 2.4rem;max-width:640px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .book-widget .bw-field{flex:1 1 150px;display:flex;flex-direction:column;gap:.45rem;padding:1rem 1.2rem;background:rgba(13,13,16,.82);text-align:left}
+  .book-widget label{font-family:var(--sans-en);font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .book-widget input,.book-widget select{background:transparent;border:0;color:#fbf8f1;font-family:var(--sans-en);font-size:.95rem;letter-spacing:.05em;padding:0;outline:none;width:100%}
+  .book-widget input::-webkit-calendar-picker-indicator{filter:invert(.8) sepia(.4);cursor:pointer}
+  .book-widget select option{background:#1a1a1f;color:#fbf8f1}
+  .bw-note{font-size:.78rem!important;letter-spacing:.06em;margin-bottom:2.2rem!important;color:var(--ink-sub)}
+  @media (max-width:700px){.book-widget .bw-field{flex-basis:100%}}
   .btn-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:.8rem;padding:1.2rem 3.2rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans-en);font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;transition:all .4s;background:transparent;font-weight:400}
   .btn:hover{background:var(--gold);color:var(--bg)}
@@ -1416,8 +1424,25 @@
       THE muslim friendly HOSPITEL by Dr.は完全予約制です。<br />
       ご予約・空室状況・取材に関するお問い合わせは、以下よりお気軽にご連絡ください。
     </p>
+    <form class="book-widget" id="book-widget">
+      <div class="bw-field">
+        <label for="bw-checkin" data-i18n="booking.checkin">チェックイン</label>
+        <input type="date" id="bw-checkin" required />
+      </div>
+      <div class="bw-field">
+        <label for="bw-checkout" data-i18n="booking.checkout">チェックアウト</label>
+        <input type="date" id="bw-checkout" required />
+      </div>
+      <div class="bw-field">
+        <label for="bw-guests" data-i18n="booking.guests">ゲスト</label>
+        <select id="bw-guests">
+          <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+        </select>
+      </div>
+    </form>
+    <p class="bw-note" data-i18n="booking.note">空室状況と料金は、安全な予約ページ（Beds24）でご確認いただけます。</p>
     <div class="btn-row">
-      <a href="mailto:info@the-hospitel.jp" class="btn primary">Book a Stay</a>
+      <button type="submit" form="book-widget" class="btn primary" data-i18n="booking.cta">空室を確認して予約</button>
       <a href="mailto:support@dr-fudousan.jp" class="btn">Inquire</a>
     </div>
   </div>
@@ -1609,6 +1634,11 @@
 
       "booking.h2": "深い眠りの邸宅を、<br />予約する。",
       "booking.p": "THE muslim friendly HOSPITEL by Dr.は完全予約制です。<br />ご予約・空室状況・取材に関するお問い合わせは、以下よりお気軽にご連絡ください。",
+      "booking.checkin": "チェックイン",
+      "booking.checkout": "チェックアウト",
+      "booking.guests": "ゲスト",
+      "booking.note": "空室状況と料金は、安全な予約ページ（Beds24）でご確認いただけます。",
+      "booking.cta": "空室を確認して予約",
 
       "footer.intro": "築 50 年の家屋を改修した、古き良き和の一棟貸し邸宅。東京・墨田区で、ムスリムの暮らしと医師監修の安眠を、ひとつ屋根の下に。",
       "footer.operator.company": "医師の不動産株式会社",
@@ -1790,6 +1820,11 @@
 
       "booking.h2": "Reserve the<br />residence of deep rest.",
       "booking.p": "THE muslim friendly HOSPITEL by Dr. is by reservation only.<br />For bookings, availability, or press inquiries, please feel free to reach out.",
+      "booking.checkin": "Check-in",
+      "booking.checkout": "Check-out",
+      "booking.guests": "Guests",
+      "booking.note": "Availability and rates are shown on our secure booking page (Beds24).",
+      "booking.cta": "Check Availability &amp; Book",
 
       "footer.intro": "A 50-year-old wooden residence, renovated whole — a quiet heritage house in Sumida, Tokyo, where Muslim daily life and a doctor-curated deep sleep meet under one roof.",
       "footer.operator.company": "Ishi-no-Fudousan Co., Ltd.",
@@ -1867,6 +1902,39 @@
     }
     try { localStorage.setItem('hospitel_lang', lang); } catch(e) {}
   }
+
+  /* Booking widget → Beds24 booking page */
+  (function(){
+    var form = document.getElementById('book-widget');
+    if (!form) return;
+    var ci = document.getElementById('bw-checkin');
+    var co = document.getElementById('bw-checkout');
+    var guests = document.getElementById('bw-guests');
+    function fmt(d){ return d.toISOString().slice(0,10); }
+    var today = new Date(); today.setHours(12,0,0,0);
+    var tomorrow = new Date(today.getTime() + 864e5);
+    ci.min = fmt(today);
+    co.min = fmt(tomorrow);
+    ci.addEventListener('change', function(){
+      if (!ci.value) return;
+      var next = new Date(ci.value); next.setHours(12,0,0,0);
+      next = new Date(next.getTime() + 864e5);
+      co.min = fmt(next);
+      if (!co.value || co.value <= ci.value) co.value = fmt(next);
+    });
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if (!ci.value || !co.value || co.value <= ci.value){ ci.reportValidity(); return; }
+      var nights = Math.round((new Date(co.value) - new Date(ci.value)) / 864e5);
+      var lang = document.body.classList.contains('lang-ja') ? 'ja' : 'en';
+      var url = 'https://beds24.com/booking2.php?propid=332409'
+        + '&checkin=' + encodeURIComponent(ci.value)
+        + '&numnight=' + nights
+        + '&numadult=' + encodeURIComponent(guests.value)
+        + '&lang=' + lang + '&referer=website';
+      window.open(url, '_blank', 'noopener');
+    });
+  })();
 
   (function(){
     var urlLang = null;
