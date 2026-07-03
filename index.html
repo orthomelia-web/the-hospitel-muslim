@@ -709,6 +709,10 @@
   .book-widget input::-webkit-calendar-picker-indicator{filter:invert(.8) sepia(.4);cursor:pointer}
   .book-widget select option{background:#1a1a1f;color:#fbf8f1}
   .bw-note{font-size:.78rem!important;letter-spacing:.06em;margin-bottom:2.2rem!important;color:var(--ink-sub)}
+  .bw-ota{margin-top:2.4rem;font-size:.74rem;letter-spacing:.08em;line-height:2;color:var(--ink-sub)}
+  .bw-ota a{color:var(--gold);text-decoration:underline;text-underline-offset:4px;transition:opacity .3s}
+  .bw-ota a:hover{opacity:.7}
+  .bw-ota .sep{margin:0 .6em;opacity:.5}
   @media (max-width:700px){.book-widget .bw-field{flex-basis:100%}}
   .btn-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:.8rem;padding:1.2rem 3.2rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans-en);font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;transition:all .4s;background:transparent;font-weight:400}
@@ -1445,6 +1449,11 @@
       <button type="submit" form="book-widget" class="btn primary" data-i18n="booking.cta">空室を確認して予約</button>
       <a href="mailto:support@dr-fudousan.jp" class="btn">Inquire</a>
     </div>
+    <p class="bw-ota">
+      <span data-i18n="booking.bestRate">公式サイトからのご予約が、手数料のかからない最もお得な料金です。</span><br />
+      <span data-i18n="booking.otaLead">他の予約サイトから：</span>
+      <a href="https://www.agoda.com/halal-villa-tokyo-the-hospitel-by-dr/hotel/tokyo-jp.html" target="_blank" rel="noopener">Agoda</a><span class="sep">・</span><a href="https://www.booking.com/hotel/jp/halal-villa-tokyo-the-hospitel-by-dr.html" target="_blank" rel="noopener">Booking.com</a>
+    </p>
   </div>
 </section>
 
@@ -1639,6 +1648,8 @@
       "booking.guests": "ゲスト",
       "booking.note": "空室状況と料金は、安全な予約ページ（Beds24）でご確認いただけます。",
       "booking.cta": "空室を確認して予約",
+      "booking.bestRate": "公式サイトからのご予約が、手数料のかからない最もお得な料金です。",
+      "booking.otaLead": "他の予約サイトから：",
 
       "footer.intro": "築 50 年の家屋を改修した、古き良き和の一棟貸し邸宅。東京・墨田区で、ムスリムの暮らしと医師監修の安眠を、ひとつ屋根の下に。",
       "footer.operator.company": "医師の不動産株式会社",
@@ -1825,6 +1836,8 @@
       "booking.guests": "Guests",
       "booking.note": "Availability and rates are shown on our secure booking page (Beds24).",
       "booking.cta": "Check Availability &amp; Book",
+      "booking.bestRate": "Booking direct on our official site guarantees the best rate — no agency fees.",
+      "booking.otaLead": "Also available on:",
 
       "footer.intro": "A 50-year-old wooden residence, renovated whole — a quiet heritage house in Sumida, Tokyo, where Muslim daily life and a doctor-curated deep sleep meet under one roof.",
       "footer.operator.company": "Ishi-no-Fudousan Co., Ltd.",
