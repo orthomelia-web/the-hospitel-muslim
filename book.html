@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Reservation | THE HOSPITEL by Dr. — Muslim-Friendly</title>
+<meta name="description" content="Book your stay at THE HOSPITEL by Dr. — Tokyo's Muslim-friendly private villa near Skytree. Best rate guaranteed on our official site. Secure payment via PayPal." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#0d0d10" />
+<link rel="canonical" href="https://orthomelia-web.github.io/the-hospitel-muslim/book.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<style>
+  :root {
+    --bg: #0d0d10;
+    --surface: #131318;
+    --ink: #f2efe8;
+    --ink-sub: #d4ccba;
+    --ink-dim: #8a8378;
+    --line-soft: #1c1c20;
+    --gold: #c8a96a;
+    --serif-jp: "Shippori Mincho", "游明朝", "Yu Mincho", serif;
+    --serif-en: "Cormorant Garamond", "Times New Roman", serif;
+    --sans-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif-jp);line-height:1.8;letter-spacing:.04em;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow:hidden}
+  a{color:inherit;text-decoration:none}
+
+  header{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 1.4rem;background:rgba(13,13,16,.96);border-bottom:1px solid var(--line-soft)}
+  .brand{font-family:var(--serif-en);font-size:1.05rem;letter-spacing:.34em;font-weight:400;display:inline-flex;align-items:center;gap:.6em;white-space:nowrap}
+  .brand .dot{color:var(--gold);margin:0 -.15em;letter-spacing:0}
+  .brand .by{font-style:italic;font-size:.75em;letter-spacing:.15em;color:var(--gold);margin-left:.1em;font-weight:300}
+  .back{font-family:var(--sans-en);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-sub);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s;white-space:nowrap;min-height:44px}
+  .back:hover{color:var(--gold)}
+  .back .arrow{font-family:var(--serif-en);font-size:1rem;letter-spacing:0}
+
+  .note-bar{flex-shrink:0;padding:.5rem 1.4rem;background:var(--surface);border-bottom:1px solid var(--line-soft);font-size:.68rem;color:var(--ink-dim);letter-spacing:.06em;text-align:center}
+  .note-bar b{color:var(--gold);font-weight:500}
+
+  .frame-wrap{flex:1;min-height:0;background:#fff}
+  .frame-wrap iframe{display:block;width:100%;height:100%;border:none}
+
+  @media (max-width:700px){
+    header{padding:.7rem 1rem}
+    .brand{font-size:.85rem;letter-spacing:.26em}
+    .note-bar{font-size:.6rem;padding:.45rem 1rem}
+  }
+
+  [data-i18n]{visibility:visible}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html">HOSPITEL<span class="dot">·</span><span class="by">by Dr.</span></a>
+  <a class="back" href="index.html#booking"><span class="arrow">←</span><span data-i18n="back">Back to site</span></a>
+</header>
+
+<div class="note-bar">
+  <span data-i18n="note">公式サイト限定・手数料なしの<b>ベストレート</b>でご予約いただけます。お支払い（PayPal）は新しいウィンドウで安全に開きます。</span>
+</div>
+
+<div class="frame-wrap">
+  <iframe id="booking-frame" title="Booking — THE HOSPITEL by Dr." src="about:blank" onload="try{window.scrollTo(0,0)}catch(e){}"></iframe>
+</div>
+
+<script>
+(function(){
+  var I18N = {
+    ja: {
+      back: 'サイトへ戻る',
+      note: '公式サイト限定・手数料なしの<b>ベストレート</b>でご予約いただけます。お支払い（PayPal）は新しいウィンドウで安全に開きます。',
+      title: 'ご予約 | THE HOSPITEL by Dr. — Muslim-Friendly'
+    },
+    en: {
+      back: 'Back to site',
+      note: 'Book here at our <b>best rate</b> — no commission, official site only. Secure payment (PayPal) opens in a new window.',
+      title: 'Reservation | THE HOSPITEL by Dr. — Muslim-Friendly'
+    }
+  };
+
+  var params = new URLSearchParams(window.location.search);
+  var lang = params.get('lang');
+  if (lang !== 'ja' && lang !== 'en') {
+    try { lang = localStorage.getItem('hospitel_lang'); } catch(e) {}
+  }
+  if (lang !== 'ja' && lang !== 'en') lang = 'en';
+  try { localStorage.setItem('hospitel_lang', lang); } catch(e) {}
+
+  document.documentElement.lang = lang;
+  document.title = I18N[lang].title;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    if (I18N[lang][key]) el.innerHTML = I18N[lang][key];
+  });
+
+  /* Build Beds24 booking-page URL from query params */
+  var url = 'https://beds24.com/booking2.php?propid=332409&referer=iframe&lang=' + lang;
+  ['checkin','numnight','numadult'].forEach(function(k){
+    var v = params.get(k);
+    if (v && /^[0-9-]{1,10}$/.test(v)) url += '&' + k + '=' + encodeURIComponent(v);
+  });
+  document.getElementById('booking-frame').src = url;
+})();
+</script>
+</body>
+</html>

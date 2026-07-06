@@ -1444,7 +1444,7 @@
         </select>
       </div>
     </form>
-    <p class="bw-note" data-i18n="booking.note">空室状況と料金は、安全な予約ページ（Beds24）でご確認いただけます。</p>
+    <p class="bw-note" data-i18n="booking.note">空室状況の確認からお支払い（PayPal対応）まで、公式サイト内で完結します。</p>
     <div class="btn-row">
       <button type="submit" form="book-widget" class="btn primary" data-i18n="booking.cta">空室を確認して予約</button>
       <a href="mailto:support@dr-fudousan.jp" class="btn">Inquire</a>
@@ -1646,7 +1646,7 @@
       "booking.checkin": "チェックイン",
       "booking.checkout": "チェックアウト",
       "booking.guests": "ゲスト",
-      "booking.note": "空室状況と料金は、安全な予約ページ（Beds24）でご確認いただけます。",
+      "booking.note": "空室状況の確認からお支払い（PayPal対応）まで、公式サイト内で完結します。",
       "booking.cta": "空室を確認して予約",
       "booking.bestRate": "公式サイトからのご予約が、手数料のかからない最もお得な料金です。",
       "booking.otaLead": "他の予約サイトから：",
@@ -1834,7 +1834,7 @@
       "booking.checkin": "Check-in",
       "booking.checkout": "Check-out",
       "booking.guests": "Guests",
-      "booking.note": "Availability and rates are shown on our secure booking page (Beds24).",
+      "booking.note": "Check availability and pay securely (PayPal accepted) — all right here on our official site.",
       "booking.cta": "Check Availability &amp; Book",
       "booking.bestRate": "Booking direct on our official site guarantees the best rate — no agency fees.",
       "booking.otaLead": "Also available on:",
@@ -1940,12 +1940,11 @@
       if (!ci.value || !co.value || co.value <= ci.value){ ci.reportValidity(); return; }
       var nights = Math.round((new Date(co.value) - new Date(ci.value)) / 864e5);
       var lang = document.body.classList.contains('lang-ja') ? 'ja' : 'en';
-      var url = 'https://beds24.com/booking2.php?propid=332409'
-        + '&checkin=' + encodeURIComponent(ci.value)
+      var url = 'book.html?checkin=' + encodeURIComponent(ci.value)
         + '&numnight=' + nights
         + '&numadult=' + encodeURIComponent(guests.value)
-        + '&lang=' + lang + '&referer=website';
-      window.open(url, '_blank', 'noopener');
+        + '&lang=' + lang;
+      window.location.href = url;
     });
   })();
 
