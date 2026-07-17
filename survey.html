@@ -63,6 +63,12 @@
   .code-box{margin:44px auto 28px}
   .book-link-dim{border-color:#3a3a42;color:var(--ink-dim)}
   .book-link-dim:hover{background:rgba(255,255,255,.04)}
+  .site-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:14px 18px;border:1px solid var(--gold-soft);border-radius:3px;background:rgba(200,169,106,.1);text-decoration:none;transition:.2s;text-align:left}
+  .site-banner:hover{background:rgba(200,169,106,.18)}
+  .sb-left{display:flex;flex-direction:column;gap:2px}
+  .sb-brand{font-family:var(--serif-en);font-size:1.05rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+  .sb-label{font-size:.68rem;letter-spacing:.14em;color:var(--ink);text-transform:uppercase}
+  .sb-arrow{color:var(--gold);font-size:1.2rem;flex:none}
 </style>
 </head>
 <body>
@@ -154,8 +160,14 @@
       <div class="label">Your thank-you code</div>
       <div class="code">HOSPITEL10</div>
       <div class="desc">10% off your next stay when you book directly on our official website.</div>
+      <a class="site-banner" href="https://orthomelia-web.github.io/the-hospitel-muslim/#booking">
+        <span class="sb-left">
+          <span class="sb-brand">The Hospitel</span>
+          <span class="sb-label">Official Website &middot; Best Rate</span>
+        </span>
+        <span class="sb-arrow">&rarr;</span>
+      </a>
     </div>
-    <a class="book-link book-link-dim" href="https://orthomelia-web.github.io/the-hospitel-muslim/#booking">Book Your Next Stay</a>
   </div>
 </div>
 
