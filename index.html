@@ -736,6 +736,7 @@
   .cal-day.closed::after{content:"";position:absolute;left:26%;right:26%;top:50%;height:1px;background:#454039;transform:rotate(-24deg)}
   .cal-day.past{color:#3d3a35;cursor:default;background:transparent;border-color:transparent}
   .cal-day.past::after{display:none}
+  .cal-day.pending{color:var(--ink-dim)}
   .cal-day.sel{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--bg);font-weight:500}
   .cal-day.in-range{background:rgba(200,169,106,.42)!important;color:#fbf8f1}
   .avail-cal-legend{display:flex;align-items:center;gap:1.3rem;margin-top:.85rem;font-size:.68rem;color:var(--ink-sub);letter-spacing:.08em;flex-wrap:wrap}
@@ -1480,7 +1481,7 @@
         </select>
       </div>
     </form>
-    <div class="avail-cal" id="avail-cal" hidden>
+    <div class="avail-cal" id="avail-cal">
       <div class="avail-cal-head">
         <span class="avail-cal-title" data-i18n="booking.cal.title">空室カレンダー</span>
         <div class="avail-cal-nav">
@@ -2012,14 +2013,15 @@
   /* Availability calendar (data: availability.json, updated daily from Beds24) */
   (function(){
     var wrap = document.getElementById('avail-cal');
-    if (!wrap || !window.fetch) return;
+    if (!wrap) return;
+    if (!window.fetch){ wrap.hidden = true; return; }
     var monthsEl = document.getElementById('cal-months');
     var updatedEl = document.getElementById('cal-updated');
     var prevBtn = document.getElementById('cal-prev');
     var nextBtn = document.getElementById('cal-next');
     var ciInput = document.getElementById('bw-checkin');
     var coInput = document.getElementById('bw-checkout');
-    var avail = null, updated = '', offset = 0, MAX_OFFSET = 4;
+    var avail = {}, loaded = false, failed = false, updated = '', offset = 0, MAX_OFFSET = 4;
     var selCi = null, selCo = null;
 
     function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -2058,7 +2060,6 @@
     }
 
     function render(){
-      if (!avail) return;
       var L = curLang(), tk = todayKey();
       monthsEl.innerHTML = '';
       var base = new Date(); base.setDate(1); base.setHours(12,0,0,0);
@@ -2084,7 +2085,9 @@
           var cell = document.createElement('span');
           cell.textContent = d;
           var cls = 'cal-day';
-          if (k < tk || avail[k] === undefined) cls += ' past';
+          if (k < tk) cls += ' past';
+          else if (!loaded) cls += ' pending';
+          else if (avail[k] === undefined) cls += ' past';
           else if (avail[k]) cls += ' open';
           else cls += ' closed';
           if (selCi && k === selCi) cls += ' sel';
@@ -2101,22 +2104,25 @@
       }
       prevBtn.disabled = offset <= 0;
       nextBtn.disabled = offset >= MAX_OFFSET;
-      if (updated) updatedEl.textContent = (L === 'ja' ? '更新: ' : 'Updated: ') + updated;
+      if (failed) updatedEl.textContent = (L === 'ja' ? '空室状況を読み込めませんでした。予約ページでご確認ください。' : 'Availability could not be loaded — please check the booking page.');
+      else if (updated) updatedEl.textContent = (L === 'ja' ? '更新: ' : 'Updated: ') + updated;
+      else updatedEl.textContent = (L === 'ja' ? '読み込み中…' : 'Loading…');
     }
 
     prevBtn.addEventListener('click', function(){ if (offset > 0){ offset--; render(); } });
     nextBtn.addEventListener('click', function(){ if (offset < MAX_OFFSET){ offset++; render(); } });
     window.__renderAvailCal = render;
+    render();
 
     fetch('availability.json?t=' + Date.now())
       .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data){
         avail = data.availability || {};
         updated = (data.updated || '').slice(0, 10);
-        wrap.hidden = false;
+        loaded = true;
         render();
       })
-      .catch(function(){ /* データが無ければカレンダー非表示のまま */ });
+      .catch(function(){ failed = true; render(); });
   })();
 
   (function(){
