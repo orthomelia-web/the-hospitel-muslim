@@ -201,9 +201,6 @@
     .footer-operator .fo-label{font-size:.6rem;letter-spacing:.32em}
     .footer-operator .fo-company{font-size:.88rem;letter-spacing:.14em}
     .footer-operator .fo-meta{font-size:.72rem}
-    .book-bar-cta{font-size:.78rem;letter-spacing:.1em;gap:.7rem;padding:.8rem .9rem}
-    .book-bar-cta .arrow{font-size:.6rem;letter-spacing:.22em}
-    body.lang-en .book-bar-cta{font-size:.85rem}
   }
 
   /* FADE-IN ON SCROLL (elegant reveal) */
@@ -752,7 +749,7 @@
   .cal-month h4{font-family:var(--serif-en);font-weight:400;font-size:1.02rem;letter-spacing:.16em;color:#fbf8f1;text-align:center;margin-bottom:.75rem}
   .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
   .cal-grid .dow{font-family:var(--sans-en);font-size:.55rem;letter-spacing:.08em;color:var(--ink-dim);text-align:center;padding:.25rem 0}
-  .cal-day{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--sans-en);font-size:.76rem;color:var(--ink-sub);border:1px solid transparent;user-select:none}
+  .cal-day{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--sans-en);font-size:.85rem;color:var(--ink-sub);border:1px solid transparent;user-select:none}
   .cal-day.blank{visibility:hidden}
   .cal-day.open{color:#fbf8f1;cursor:pointer;background:rgba(200,169,106,.14);border-color:rgba(200,169,106,.4);transition:background .25s,border-color .25s}
   .cal-day.open:hover{background:rgba(200,169,106,.32)}
@@ -772,7 +769,12 @@
   @media (max-width:700px){
     .avail-cal-months{grid-template-columns:1fr}
     .avail-cal .cal-month + .cal-month{display:none}
-    .avail-cal-updated{margin-left:0;flex-basis:100%}
+    .avail-cal-updated{margin-left:0;flex-basis:100%;font-size:.7rem}
+    .cal-month h4{font-size:1.2rem}
+    .cal-grid .dow{font-size:.7rem}
+    .cal-day{font-size:1.05rem}
+    .avail-cal-legend{font-size:.78rem}
+    .booking .avail-cal-hint{font-size:.78rem}
   }
 
   .btn-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
@@ -797,10 +799,13 @@
   .book-bar-close svg{width:14px;height:14px}
   .book-bar-details{display:flex;align-items:center;justify-content:center;padding:0 1.8rem;border-right:1px solid rgba(255,255,255,.08);color:var(--gold);font-family:var(--serif-en);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;transition:color .3s,background .3s;white-space:nowrap;flex-shrink:0}
   .book-bar-details:hover{background:rgba(200,169,106,.08);color:#fbf8f1}
-  @media (max-width:700px){.book-bar-details{padding:0 .9rem;font-size:.66rem;letter-spacing:.2em}}
-  @media (max-width:420px){.book-bar-details{padding:0 .7rem;font-size:.58rem;letter-spacing:.16em}}
-  @media (max-width:700px){.book-bar-cta{font-size:.88rem;padding:.9rem 1rem .9rem calc(1rem + 48px);gap:.9rem;letter-spacing:.12em}.book-bar-cta .arrow{font-size:.7rem;letter-spacing:.25em}.book-bar-cta .arrow::after{width:24px}.book-bar-cta:hover .arrow::after{width:36px}.book-bar-close{padding:0 1rem}body.lang-en .book-bar-cta{font-size:.95rem}}
-  @media (max-width:420px){.book-bar-cta{flex-direction:column;gap:.3rem;padding:.75rem 1rem .75rem calc(1rem + 48px);font-size:.82rem}.book-bar-cta .arrow{font-size:.62rem}.book-bar-cta .arrow::after{width:18px}}
+  .book-bar .bb-short{display:none}
+  @media (max-width:700px){.book-bar .bb-long{display:none}.book-bar .bb-short{display:inline}}
+  @media (max-width:700px){.book-bar-details{padding:0 1rem;font-size:.8rem;letter-spacing:.18em}}
+  @media (max-width:420px){.book-bar-details{padding:0 .85rem;font-size:.74rem;letter-spacing:.14em}}
+  @media (max-width:700px){.book-bar-cta{font-size:1.05rem;padding:1rem;gap:.8rem;letter-spacing:.08em;white-space:nowrap}.book-bar-cta .arrow{font-size:.82rem;letter-spacing:.25em}.book-bar-cta .arrow::after{width:24px}.book-bar-cta:hover .arrow::after{width:36px}.book-bar-close{padding:0 1rem}body.lang-en .book-bar-cta{font-size:1.05rem}}
+  @media (max-width:420px){.book-bar-cta{gap:.6rem;padding:1rem .6rem;font-size:1rem}.book-bar-cta .arrow{font-size:.78rem;letter-spacing:.2em}.book-bar-cta .arrow::after{width:18px}}
+  @media (max-width:360px){.book-bar-cta{font-size:.92rem}body.lang-en .book-bar-cta{font-size:.95rem}}
 
   /* FOOTER */
   footer{background:var(--surface);padding:5rem 3rem 2.5rem;border-top:1px solid var(--line-soft)}
@@ -1642,9 +1647,10 @@ gtag('config', 'G-FL9FTY3GKB');
 
 <!-- FLOATING BOOK BAR -->
 <aside class="book-bar" id="book-bar" aria-hidden="true">
-  <a class="book-bar-details" href="#details" onclick="var d=document.getElementById('details');d&&d.classList.add('is-open');var b=d&&d.querySelector('.details-head');b&&b.setAttribute('aria-expanded','true')" data-i18n="bookBar.details">Property Details</a>
+  <a class="book-bar-details" href="#details" onclick="var d=document.getElementById('details');d&&d.classList.add('is-open');var b=d&&d.querySelector('.details-head');b&&b.setAttribute('aria-expanded','true')"><span class="bb-long" data-i18n="bookBar.details">Property Details</span><span class="bb-short" data-i18n="bookBar.detailsShort">Details</span></a>
   <a class="book-bar-cta" href="#booking">
-    <span data-i18n="bookBar.text">深い眠りの邸宅を、予約する。</span>
+    <span class="bb-long" data-i18n="bookBar.text">深い眠りの邸宅を、予約する。</span>
+    <span class="bb-short" data-i18n="bookBar.textShort">深い眠りの邸宅へ</span>
     <span class="arrow" data-i18n="bookBar.cta">Book</span>
   </a>
   <button class="book-bar-close" id="book-bar-close" type="button" aria-label="Close reservation bar">
@@ -1916,8 +1922,10 @@ gtag('config', 'G-FL9FTY3GKB');
       "faq.a9": "A. ご予約時に宿泊料金の全額を PayPal で安全にお支払いいただきます（PayPal アカウントがなくてもクレジットカードで決済できます）。お支払い完了と同時にご予約が確定します。",
 
       "bookBar.text": "深い眠りの邸宅を、予約する。",
+      "bookBar.textShort": "深い眠りの邸宅へ",
       "bookBar.cta": "Book",
-      "bookBar.details": "詳細情報"
+      "bookBar.details": "詳細情報",
+      "bookBar.detailsShort": "詳細情報"
     },
     en: {
       "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
@@ -2132,8 +2140,10 @@ gtag('config', 'G-FL9FTY3GKB');
       "faq.a9": "A. The full amount is paid securely via PayPal at the time of booking (a credit card works too — no PayPal account needed). Your reservation is confirmed as soon as the payment completes.",
 
       "bookBar.text": "Reserve the residence of deep rest.",
+      "bookBar.textShort": "Reserve your stay",
       "bookBar.cta": "Book",
-      "bookBar.details": "Property Details"
+      "bookBar.details": "Property Details",
+      "bookBar.detailsShort": "Details"
     }
   };
 
