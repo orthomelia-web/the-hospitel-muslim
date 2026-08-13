@@ -89,15 +89,26 @@ gtag('config', 'G-FL9FTY3GKB');
       back: 'Back to site',
       note: 'Book here at our <b>best rate</b> — no commission, official site only. Secure payment (PayPal) opens in a new window.',
       title: 'Reservation | muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.'
+    },
+    id: {
+      back: 'Kembali ke situs',
+      note: 'Pesan di sini dengan <b>harga terbaik</b> — tanpa komisi, hanya di situs resmi. Pembayaran aman (PayPal) terbuka di jendela baru.',
+      title: 'Reservasi | muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.'
+    },
+    ms: {
+      back: 'Kembali ke laman',
+      note: 'Tempah di sini pada <b>kadar terbaik</b> — tiada komisen, laman rasmi sahaja. Pembayaran selamat (PayPal) dibuka di tetingkap baharu.',
+      title: 'Tempahan | muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.'
     }
   };
 
+  var VALID = ['ja','en','id','ms'];
   var params = new URLSearchParams(window.location.search);
   var lang = params.get('lang');
-  if (lang !== 'ja' && lang !== 'en') {
+  if (VALID.indexOf(lang) === -1) {
     try { lang = localStorage.getItem('hospitel_lang'); } catch(e) {}
   }
-  if (lang !== 'ja' && lang !== 'en') lang = 'en';
+  if (VALID.indexOf(lang) === -1) lang = 'en';
   try { localStorage.setItem('hospitel_lang', lang); } catch(e) {}
 
   document.documentElement.lang = lang;
@@ -107,8 +118,9 @@ gtag('config', 'G-FL9FTY3GKB');
     if (I18N[lang][key]) el.innerHTML = I18N[lang][key];
   });
 
-  /* Build Beds24 booking-page URL from query params */
-  var url = 'https://beds24.com/booking2.php?propid=332409&referer=iframe&lang=' + lang;
+  /* Build Beds24 booking-page URL from query params (Beds24 UI supports ja/en only here) */
+  var b24lang = (lang === 'ja') ? 'ja' : 'en';
+  var url = 'https://beds24.com/booking2.php?propid=332409&referer=iframe&lang=' + b24lang;
   ['checkin','numnight','numadult'].forEach(function(k){
     var v = params.get(k);
     if (v && /^[0-9-]{1,10}$/.test(v)) url += '&' + k + '=' + encodeURIComponent(v);

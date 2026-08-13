@@ -4,11 +4,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://thehospitel.jp/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/?lang=ms"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/"/>
     <image:image>
       <image:loc>https://thehospitel.jp/exterior.jpg</image:loc>
@@ -49,5 +51,95 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/book.html?lang=ja"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/book.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/book.html"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/id/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/ms/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/id/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/ms/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/muslim-friendly-tokyo-itinerary/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/ramadan-in-tokyo/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/ramadan-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/ramadan-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/ramadan-in-tokyo/id/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/ramadan-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/ramadan-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/ramadan-in-tokyo/ms/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/ramadan-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/ramadan-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/ramadan-in-tokyo/"/>
   </url>
 </urlset>

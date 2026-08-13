@@ -12,6 +12,8 @@
 <link rel="canonical" href="https://thehospitel.jp/" />
 <link rel="alternate" hreflang="en" href="https://thehospitel.jp/" />
 <link rel="alternate" hreflang="ja" href="https://thehospitel.jp/?lang=ja" />
+<link rel="alternate" hreflang="id" href="https://thehospitel.jp/?lang=id" />
+<link rel="alternate" hreflang="ms" href="https://thehospitel.jp/?lang=ms" />
 <link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/" />
 
 <!-- Open Graph -->
@@ -69,7 +71,7 @@
   "petsAllowed": false,
   "smokingAllowed": false,
   "numberOfRooms": "1",
-  "availableLanguage": ["ja", "en", "ar"],
+  "availableLanguage": ["ja", "en", "id", "ms", "ar"],
   "amenityFeature": [
     {"@type": "LocationFeatureSpecification", "name": "2つの礼拝スペース / Two Prayer Rooms", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "キブラ表示 / Qibla indicator", "value": true},
@@ -89,7 +91,7 @@
     {"@type": "LocationFeatureSpecification", "name": "1日1組限定", "value": true}
   ],
   "slogan": "暮らしと深い眠りが、同じ屋根の下で息づく。",
-  "knowsLanguage": ["ja", "en", "ar"],
+  "knowsLanguage": ["ja", "en", "id", "ms", "ar"],
   "brand": {
     "@type": "Brand",
     "name": "THE HOSPITEL by Dr."
@@ -120,7 +122,7 @@
   "url": "https://thehospitel.jp/",
   "name": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
   "description": "東京のムスリムフレンドリーホテル「muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.」公式サイト",
-  "inLanguage": ["ja", "en"]
+  "inLanguage": ["ja", "en", "id", "ms"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -635,6 +637,15 @@
   .faq-item:hover{border-color:var(--line)}
   .faq-q{font-family:var(--serif-jp);font-weight:500;font-size:.95rem;letter-spacing:.1em;color:var(--ink);margin:0 0 .7rem;line-height:1.6}
   .faq-a{color:var(--ink-sub);font-size:.82rem;line-height:1.95;font-weight:500;margin:0}
+  /* Local guides strip */
+  .guides{padding:5.5rem 1.6rem;border-top:1px solid var(--line-soft)}
+  .guides-inner{max-width:980px;margin:0 auto}
+  .guides h2{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.3rem,3vw,1.7rem);letter-spacing:.12em;margin:.9rem 0 .6rem;color:var(--ink)}
+  .guides-intro{color:var(--ink-sub);font-size:.85rem;max-width:620px;margin:0 0 1.8rem}
+  .guides-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .guide-link{display:block;border:1px solid var(--line-soft);background:rgba(255,255,255,.015);padding:1.35rem 1.4rem;font-size:.88rem;line-height:1.7;color:var(--ink-sub);transition:border-color .3s,color .3s}
+  .guide-link:hover{border-color:var(--gold);color:var(--ink)}
+  .gl-lbl{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
   @media (max-width:760px){
     .details{padding:1rem 1.2rem}
     .details-head{padding:.9rem 1rem}
@@ -891,6 +902,10 @@ gtag('config', 'G-FL9FTY3GKB');
   <div class="lang-toggle" role="group" aria-label="Language">
     <button type="button" data-lang="en" class="is-active" aria-label="English">EN</button>
     <span class="sep" aria-hidden="true">/</span>
+    <button type="button" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+    <span class="sep" aria-hidden="true">/</span>
+    <button type="button" data-lang="ms" aria-label="Bahasa Melayu">MS</button>
+    <span class="sep" aria-hidden="true">/</span>
     <button type="button" data-lang="ja" aria-label="日本語">JA</button>
   </div>
   <button class="menu-trigger" id="menu-open" aria-label="Open menu">
@@ -906,6 +921,10 @@ gtag('config', 'G-FL9FTY3GKB');
     <div style="display:flex;align-items:center;gap:0">
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-lang="en" class="is-active" aria-label="English">EN</button>
+        <span class="sep" aria-hidden="true">/</span>
+        <button type="button" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+        <span class="sep" aria-hidden="true">/</span>
+        <button type="button" data-lang="ms" aria-label="Bahasa Melayu">MS</button>
         <span class="sep" aria-hidden="true">/</span>
         <button type="button" data-lang="ja" aria-label="日本語">JA</button>
       </div>
@@ -1594,6 +1613,16 @@ gtag('config', 'G-FL9FTY3GKB');
   </div>
 </section>
 
+<!-- LOCAL GUIDES -->
+<section class="guides" id="guides">
+  <div class="guides-inner">
+    <div class="eyebrow">Local Guide</div>
+    <h2 data-i18n="guides.h2">周辺ハラールガイド</h2>
+    <p class="guides-intro" data-i18n="guides.intro">スカイツリー・浅草エリアのハラール レストラン、モスク、モデルコースをまとめた、宿発のローカルガイドです。</p>
+    <div class="guides-list" data-i18n="guides.links"><a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/'><span class='gl-lbl'>Guide 01</span>スカイツリー・浅草周辺のハラール飲食店とモスク（英語）</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/'><span class='gl-lbl'>Guide 02</span>ムスリム向け 東京4日間モデルコース（英語）</a><a class='guide-link' href='/guide/ramadan-in-tokyo/'><span class='gl-lbl'>Guide 03</span>東京のラマダン — 日程・イフタール（英語）</a></div>
+  </div>
+</section>
+
 <!-- BOOKING -->
 <section class="booking" id="booking">
   <div class="booking-inner">
@@ -1925,7 +1954,10 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.textShort": "深い眠りの邸宅へ",
       "bookBar.cta": "Book",
       "bookBar.details": "詳細情報",
-      "bookBar.detailsShort": "詳細情報"
+      "bookBar.detailsShort": "詳細情報",
+      "guides.h2": "周辺ハラールガイド",
+      "guides.intro": "スカイツリー・浅草エリアのハラール レストラン、モスク、モデルコースをまとめた、宿発のローカルガイドです。",
+      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/'><span class='gl-lbl'>Guide 01</span>スカイツリー・浅草周辺のハラール飲食店とモスク（英語）</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/'><span class='gl-lbl'>Guide 02</span>ムスリム向け 東京4日間モデルコース（英語）</a><a class='guide-link' href='/guide/ramadan-in-tokyo/'><span class='gl-lbl'>Guide 03</span>東京のラマダン — 日程・イフタール（英語）</a>"
     },
     en: {
       "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
@@ -2143,16 +2175,462 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.textShort": "Reserve your stay",
       "bookBar.cta": "Book",
       "bookBar.details": "Property Details",
-      "bookBar.detailsShort": "Details"
+      "bookBar.detailsShort": "Details",
+      "guides.h2": "Local Guides",
+      "guides.intro": "Our own guides to the neighborhood — where to eat halal, where to pray, and how to plan your Tokyo days from the villa.",
+      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/'><span class='gl-lbl'>Guide 01</span>Halal food &amp; mosques near Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/'><span class='gl-lbl'>Guide 02</span>A 4-day Muslim-friendly Tokyo itinerary</a><a class='guide-link' href='/guide/ramadan-in-tokyo/'><span class='gl-lbl'>Guide 03</span>Ramadan in Tokyo — dates, iftar &amp; fasting hours</a>"
+    },
+    id: {
+      "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
+      "meta.description": "Hotel muslim-friendly di Tokyo — vila privat dekat Tokyo Skytree. 2 ruang salat, penunjuk arah kiblat, dapur khusus halal, dan kamar mandi bersih untuk wudu.",
+
+      "hero.sub": "Ramah Muslim · Vila Privat Rancangan Dokter",
+      "hero.lead": "Rumah berusia 50 tahun yang direnovasi seutuhnya — hunian Jepang yang meneruskan warisan tenangnya.<br />Keramahan ramah Muslim dan desain tidur rancangan dokter, berpadu di bawah satu atap.",
+      "hero.spec": "Hingga 10 Tamu · 3 Kamar Tidur · 6 Tempat Tidur<br class='br-sm'> · 1 Kamar Mandi · 66&nbsp;㎡",
+      "hero.meta.group": "<b>Satu Grup</b>Per Malam",
+
+      "menu.aside.intro": "Vila privat ramah Muslim dan berkesadaran halal di Tokyo. Tempat iman dan keseharian tak pernah dikorbankan.",
+      "menu.aside.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+
+      "prologue.h2": "Hunian penuh keramahan<br />dan <em>tidur lelap</em>.",
+      "prologue.p1": "Rumah kayu berusia 50 tahun yang direnovasi seutuhnya — hunian tenang yang membawa warisan Jepangnya, tempat Anda menginap dengan nyaman dan tertidur begitu lelap.",
+      "prologue.p2": "THE HOSPITEL by Dr. adalah vila privat satu rumah utuh, dirancang bersama warga Muslim yang tinggal di Jepang agar tamu Muslim dapat menginap di Tokyo dengan hati yang benar-benar tenang dan nyaman.",
+      "prologue.p3": "Lingkungan tidur rancangan dokter melarutkan lelahnya perjalanan dengan tenang. Hanya satu grup yang kami sambut setiap malam.",
+
+      "feature.h2": "Sebuah <em>rumah</em><br />untuk iman dan istirahat yang dalam.",
+      "feature.p1": "Hunian satu rumah utuh berusia 50 tahun di jalan yang tenang di Sumida. Rumah tua tradisional ini direnovasi seutuhnya — pilar, balok, fusuma, dan tatami menyimpan jejak kehidupan masa lalunya — sementara setiap detail dibentuk agar tamu Muslim dapat beristirahat setenang di rumah sendiri, meski berada di negeri asing.",
+      "feature.p2": "Dua ruang salat, arah kiblat, bidet, peralatan makan dan dapur khusus halal, kamar mandi bersih untuk wudu — serta lingkungan tidur rancangan dokter: pencahayaan hangat, alas tidur pilihan, dan berendam ramuan herbal. Iman dan istirahat yang dalam, keduanya dimuliakan di bawah satu atap.",
+      "feature.type": "Hunian Privat · Sewa Satu Rumah Utuh",
+      "feature.capacity": "Satu grup per malam",
+      "feature.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+
+      "story.h2": "<em>Kisah</em><br />di balik pintu kami.",
+      "story.lead": "Menginap tanpa kompromi.",
+      "story.p1": "Asakusa, Skytree, Ginza, Shibuya, Shinjuku — keberagaman khas Tokyo dicintai dunia. Namun bagi wisatawan Muslim, kekhawatiran kecil — tempat salat, makanan halal, fasilitas air yang bersih — dapat menumpuk tanpa terasa. Ditambah lagi, tidur lelap yang melarutkan lelah perjalanan sering kali sulit ditemukan di luar negeri.",
+      "story.pull": "Saat sebuah hunian membiarkan Anda tetap menjadi diri sendiri,<br />perjalanan pun menjadi benar-benar bebas.",
+      "story.p3": "Melalui kerja medis internasional, saya berkesempatan bertemu banyak wisatawan Muslim. Agar mereka dapat menikmati budaya Jepang dan membawa pulang istirahat yang sejati, tanpa mengorbankan iman maupun kebiasaan — niat itulah yang membentuk seluruh rumah ini, sebagai hunian ramah Muslim yang dibangun di atas desain tidur rancangan dokter.",
+      "story.p5": "Keseharian Muslim dan tidur lelap rancangan dokter — keduanya terjaga utuh di bawah satu atap. Dengan niat inilah kami membuka muslim-friendly STAY TOKYO (THE HOSPITEL by Dr.).",
+
+      "spaces.h2": "Ruang yang tenang untuk<br /><em>salat</em> dan keseharian.",
+      "spaces.note": "Ruang untuk salat, dapur untuk memasak sendiri, kamar mandi bersih untuk wudu, dan ruang tatami. Rumah ini dibentuk agar tamu Muslim dapat menjaga ritme kesehariannya, bahkan selama menginap di Tokyo.",
+      "spaces.01.h3": "Dua Ruang Salat &amp; Arah Kiblat",
+      "spaces.02.h3": "Kamar Mandi Bersih untuk Wudu",
+      "spaces.03.h3": "Tiga Kamar Tidur",
+      "spaces.04.h3": "Dapur untuk Memasak Sendiri",
+      "spaces.04.desc": "Dapur untuk menginap lama —<br>memasak dengan hati tenang.",
+      "spaces.04.tags": "Tanpa Babi · Tanpa Alkohol",
+      "spaces.05.h3": "Peralatan Makan &amp; Masak Khusus Muslim",
+      "spaces.06.h3": "Bidet",
+      "spaces.07.h3": "Ruang Makan",
+
+      "bleed1.h3": "Warisan dan tidur lelap,<br />di bawah atap yang sama.",
+
+      "sleep.h2": "<span>Untuk tamu Muslim kami,</span><span><em>tujuh</em> janji.</span>",
+      "sleep.intro": "Suasana yang dibentuk dengan saksama untuk menghormati keseharian dan kebiasaan Muslim, dengan setiap detail yang diperhatikan.",
+      "sleep.01.h3": "Dua Ruang Salat &amp; Arah Kiblat",
+      "sleep.01.p": "Dua ruang salat terpisah di dalam rumah. Baik dipisah menurut gender, per keluarga, maupun saat waktu salat berhimpitan, setiap salat dapat ditunaikan dengan tenang dan khusyuk.",
+      "sleep.01.s1": "Dapat dipisah menurut gender atau waktu",
+      "sleep.01.s2": "Ruang terpisah yang bersih dan tenang",
+      "sleep.01.s3": "Sajadah selalu tersedia",
+      "sleep.02.h3": "Sajadah · Al-Qur'an · Hijab, Dapat Dipinjam",
+      "sleep.02.p": "Bepergianlah dengan ringan. Sajadah, Al-Qur'an, dan hijab tersedia untuk dipinjam secara cuma-cuma — lingkungan untuk salat yang siap begitu Anda tiba.",
+      "sleep.02.s1": "Sajadah",
+      "sleep.02.s2": "Al-Qur'an",
+      "sleep.02.s3": "Hijab — pinjaman cuma-cuma",
+      "sleep.03.h3": "Kamar Mandi Bersih untuk Wudu &amp;<br>Amenitas Organik",
+      "sleep.03.p": "Kamar mandi bersih untuk wudu tempat Anda dapat melepas penat tanpa kehadiran orang lain, dipadukan dengan amenitas organik yang lembut di kulit. Waktu berendam yang menenangkan dan memulihkan — sepenuhnya dalam ketenangan.",
+      "sleep.03.s1": "Kamar mandi bersih untuk wudu, satu grup per hari",
+      "sleep.03.s2": "Amenitas organik",
+      "sleep.03.s3": "Sampo dan sabun mandi yang lembut di kulit",
+      "sleep.04.h3": "Peralatan Makan &amp; Masak Halal<br>Dapur untuk Memasak Sendiri<br>Kulkas Besar",
+      "sleep.04.p": "Peralatan makan dan masak khusus halal (tanpa babi / tanpa alkohol). Kulkas besar, kompor, panci, pisau — semua kebutuhan memasak telah tersedia, sehingga hidangan keluarga tetap berada di tangan Anda bahkan saat menginap lama.",
+      "sleep.04.s1": "Peralatan makan dan masak khusus halal",
+      "sleep.04.s2": "Tanpa babi / tanpa alkohol",
+      "sleep.04.s3": "Kulkas, kompor, dan perlengkapan dapur lengkap",
+      "sleep.05.h3": "Masjid &amp; Restoran Halal di Sekitar",
+      "sleep.05.p": "Panduan orisinal berisi masjid dan restoran halal yang terjangkau dengan berjalan kaki maupun kereta. Tak perlu ragu soal salat atau makan, bahkan saat Anda menjelajahi Tokyo.",
+      "sleep.05.s1": "Daftar masjid terdekat (jangkauan jalan kaki &amp; kereta)",
+      "sleep.05.s2": "Panduan pilihan restoran halal",
+      "sleep.05.s3": "Tempat wisata dan rute ramah Muslim",
+      "sleep.06.h3": "Dilengkapi Bidet &amp; Pembersihan Bebas Alkohol",
+      "sleep.07.h3": "Suaka Tidur Rancangan Dokter",
+      "sleep.07.p": "Lingkungan tidur lelap yang dirancang oleh dokter. Temukan detailnya.",
+      "sleep.07.cta": "Lihat &ldquo;Keseharian, dengan tidur lelap.&rdquo; →",
+      "sleep.06.p": "Pembersihan hanya menggunakan deterjen bebas alkohol, dirawat hingga ke setiap sudut. Semua toilet dilengkapi bidet — jaga kebiasaan bersuci Anda tetap utuh, dan menginaplah dengan hati tenang.",
+      "sleep.06.s1": "Pembersihan bebas alkohol",
+      "sleep.06.s2": "Bidet di setiap toilet",
+      "sleep.06.s3": "Fasilitas air yang mendukung wudu",
+      "sleep.labelOpen": "Lihat detail",
+      "sleep.labelClose": "Tutup",
+
+      "options.h2": "Keseharian, dengan <em>tidur lelap</em>.",
+      "options.lead": "Di atas keramahan ramah Muslim, hadir kearifan medis. Cahaya, alas tidur, berendam, teh — setiap unsur yang membentuk malam telah disusun dengan pertimbangan saksama seorang dokter.",
+      "options.01.h3": "Pencahayaan Lembut Hangat<br />&amp; Interior yang Tenang",
+      "options.01.p": "Cahaya bernuansa hangat, untuk tidur dan bangun yang alami. Interior berwarna tinta pekat meredam kebisingan visual dan menenangkan pikiran dengan lembut.",
+      "options.01.s4": "Tiga material: hitam tinta, kertas washi, kayu solid",
+      "options.01.s5": "Pencahayaan kamar tidur: 10–50 lux, tidak langsung",
+      "options.02.h3": "Kasur Premium NELL<br />Buatan Jepang &amp; Alas Tidur Pilihan",
+      "options.02.p": "Setiap kamar tidur dilengkapi NELL — kasur sleep-tech buatan Jepang dengan 1,734 pocket coil dan struktur pinggang Center Hard untuk berbalik badan secara alami. Dipadukan dengan linen pilihan dokter.",
+      "options.02.s1": "Kasur &lsquo;NELL&rsquo; buatan Jepang (1,734 pocket coil berkepadatan tinggi)",
+      "options.02.s2": "Struktur Center Hard yang menopang berbalik badan secara alami",
+      "options.02.s3": "Pocket coil berdiameter kecil dengan sirkulasi udara tinggi",
+      "options.02.s4": "F&#9734;&#9734;&#9734;&#9734; bersertifikat bebas formaldehida",
+      "options.02.s5": "Uji ketahanan sesuai standar JIS, garansi 10 tahun",
+      "options.03.h3": "Teh Herbal Nabati<br />Pengantar Tidur<br />&amp; Berendam Ramuan Herbal",
+      "options.03.p": "Air berendam dengan ramuan kampo nabati, dan teh herbal pendukung tidur — bebas kafeina, bebas alkohol. Istirahat yang meresap hingga ke inti tubuh.",
+      "options.03.s1": "Tujuh herbal nabati, termasuk angelica, cnidium, dan jahe",
+      "options.03.s4": "Racikan malam berbasis sansohnin-to (bebas kafeina)",
+      "options.03.s5": "Bingkisan untuk dibawa pulang, pilihan dokter ahli kampo",
+
+      "journal.h2": "Seorang dokter tentang<br /><em>keramahan</em>.",
+      "journal.quote": "Baik keseharian maupun tidur tak semestinya dikesampingkan dalam perjalanan —",
+      "journal.p1": "Melalui kerja medis internasional, saya mengetahui bahwa banyak wisatawan Muslim diam-diam memikul kekhawatiran kecil sepanjang masa tinggalnya di Jepang.",
+      "journal.p2": "Melalui kerja medis internasional, saya bertemu banyak wisatawan Muslim yang memikul kekhawatiran kecil di Jepang — tempat salat, makanan halal, fasilitas air yang bersih, serta tidur nyenyak di lingkungan yang asing.",
+      "journal.p3": "muslim-friendly STAY TOKYO (THE HOSPITEL by Dr.) dibangun untuk melarutkan kekhawatiran itu dengan lembut, melalui lingkungan tidur rancangan dokter dan detail yang dibentuk bersama warga Muslim yang tinggal di Jepang. Semoga perjalanan Anda menyenangkan.",
+
+      "press.h2": "Sebagaimana diliput media.",
+      "press.cite": "Nikkan Kogyo Shimbun",
+      "press.title": "Penginapan bergaya Jepang tempat tamu mancanegara tidur lelap<br>—rumah tua yang direnovasi di Sumida, Tokyo.",
+      "press.p": "THE HOSPITEL by Dr., hunian satu rumah rancangan dokter dengan desain berfokus pada tidur, diliput oleh Nikkan Kogyo Shimbun sebagai penginapan bergaya Jepang yang menghadirkan tidur pemulih bagi wisatawan mancanegara.",
+      "social.lead": "Keseharian rumah ini dan kabar terbaru kami — temukan di kanal media sosial kami.",
+
+      "bleed2.h3": "Keseharian dan tidur lelap —<br />bernapas di bawah atap yang sama.",
+
+      "info.h2": "Tentang Rumah Ini",
+      "info.p": "Tempat bersembunyi untuk satu grup per malam, di lingkungan Tokyo yang tenang. Waktu check-in dan detail amenitas akan kami sampaikan secara personal setelah reservasi Anda terkonfirmasi.",
+      "info.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+      "info.type": "Hunian Privat · Sewa Satu Rumah Utuh",
+      "info.capacity": "Satu grup per malam",
+      "info.checkin": "Mulai 16:00",
+      "info.checkout": "Hingga 10:00",
+      "info.amenity": "Dua ruang salat / Penunjuk arah kiblat / Bidet / Peminjaman sajadah·Al-Qur'an·hijab / Peralatan makan &amp; dapur khusus halal / Pembersihan bebas alkohol / Kamar mandi bersih untuk wudu / Pencahayaan hangat / Kasur NELL &amp; alas tidur pilihan dokter / Berendam ramuan herbal &amp; teh herbal (nabati)",
+      "info.option": "Ruang tidur rancangan dokter / Berendam ramuan herbal &amp; teh herbal nabati / Panduan masjid &amp; restoran halal di sekitar",
+
+      "booking.h2": "Reservasi<br />hunian istirahat yang dalam.",
+      "booking.checkin": "Check-in",
+      "booking.checkout": "Check-out",
+      "booking.guests": "Tamu",
+      "booking.cal.title": "Kalender Ketersediaan",
+      "booking.cal.open": "Tersedia",
+      "booking.cal.closed": "Terisi",
+      "booking.cal.hint": "Ketuk tanggal yang tersedia untuk mengisi check-in dan check-out Anda di bawah.",
+      "booking.note": "Cek ketersediaan dan bayar dengan aman (menerima PayPal) — semuanya langsung di situs resmi kami.",
+      "booking.cta": "Cek Ketersediaan &amp; Pesan",
+      "booking.bestRate": "Pemesanan langsung di situs resmi kami menjamin harga terbaik — tanpa biaya agen.",
+      "booking.otaLead": "Juga tersedia di:",
+
+      "footer.intro": "Hunian kayu berusia 50 tahun yang direnovasi seutuhnya — rumah warisan yang tenang di Sumida, Tokyo, tempat keseharian Muslim dan tidur lelap rancangan dokter bertemu di bawah satu atap.",
+      "footer.operator.company": "Ishi-no-Fudousan Co., Ltd.",
+      "footer.operator.address": "5-16-10-3 Honkomagome, Bunkyo-ku, Tokyo 113-0021, Japan",
+
+      "details.h2": "Detail Properti",
+      "details.spec": "Hingga 10 Tamu · 3 Kamar Tidur · 6 Tempat Tidur · 1 Kamar Mandi · 66 ㎡",
+      "opt.labelOpen": "Lihat Detail",
+      "opt.labelClose": "Tutup",
+      "details.bed.h": "Tempat Tidur",
+      "details.bed.list": "<li>Kamar Tidur 1: 1 tempat tidur queen (160×200 cm) + 1 kasur single lipat tiga (100×200 cm)</li><li>Kamar Tidur 2: 1 tempat tidur queen (160×200 cm) + 1 kasur single lipat tiga (100×200 cm)</li><li>Kamar Tidur 3: 2 tempat tidur queen (160×200 cm)</li>",
+      "details.bed.p": "Nyaman untuk hingga 10 tamu — ideal untuk rombongan besar maupun menginap bersama keluarga.",
+      "details.checkin.h": "Check-in / Check-out",
+      "details.checkin.list": "<li>Check-in: mulai pukul 16:00. Check-out: paling lambat pukul 10:00. Self check-in nirkontak melalui smart lock.</li><li>Mulai pukul 12:00, Anda dapat membuka kunci properti dan menitipkan koper di dalam. Mohon tidak membongkar barang atau menggunakan fasilitas sebelum waktu check-in.</li><li>Mohon segera meninggalkan properti setelah check-out agar pembersihan dapat dilakukan. Check-out terlambat dikenakan biaya JPY 5,000 per jam setelah pukul 10:00.</li><li>Koper tidak dapat dititipkan setelah check-out — silakan gunakan loker koin di stasiun.</li>",
+      "details.amenity.h": "Amenitas & Fasilitas",
+      "details.amenity.p": "Hunian berperlengkapan lengkap yang disiapkan untuk menginap dengan nyaman.",
+      "details.amenity.free.h": "Gratis",
+      "details.amenity.free.list": "<li>Wi-Fi kecepatan tinggi</li><li>AC & pemanas di setiap ruangan</li><li>Mesin cuci / Pengering / Penyedot debu</li><li>Gantungan baju & rak gantung</li><li>Meja kerja</li>",
+      "details.amenity.kitchen.h": "Dapur",
+      "details.amenity.kitchen.list": "<li>Kulkas besar & freezer / Ketel listrik / Kompor IH / Microwave / Oven</li><li>Peralatan makan & masak khusus halal / Alat makan / Set piring lengkap</li><li>Minyak goreng & bumbu dasar</li><li>Peralatan makan anak</li>",
+      "details.amenity.toilet.h": "Toilet",
+      "details.amenity.toilet.list": "<li>2 toilet, dilengkapi bidet</li>",
+      "details.amenity.bath.h": "Kamar Mandi & Perlengkapan",
+      "details.amenity.bath.list": "<li>Sampo / Kondisioner / Sabun badan / Sabun tangan</li><li>Sikat gigi / Pisau cukur</li><li>2 pengering rambut</li><li>Handuk mandi, handuk wajah, keset kamar mandi</li>",
+      "details.amenity.note": "※ Linen tidak diganti selama masa menginap.",
+      "details.notes.h": "Aturan Rumah & Catatan",
+      "details.notes.list1": "<li>Dilarang keras merokok</li><li>Dilarang membawa alkohol</li><li>Dilarang membawa produk babi</li>",
+      "details.notes.access.h": "Area Akses Tamu",
+      "details.notes.access.p": "Lemari perlengkapan yang terkunci di kamar tidur lantai 2 menyimpan alat kebersihan dan linen — mohon tidak dibuka.",
+      "details.notes.other.h": "Catatan Lain",
+      "details.notes.other.list": "<li>Menginap lama dipersilakan — tersedia untuk 28+ malam</li>",
+      "details.rules.h": "Aturan Rumah",
+      "details.rules.list": "<li>Anak segala usia dipersilakan (tamu 18+ dihitung sebagai dewasa)</li><li>Tidak tersedia boks bayi atau tempat tidur tambahan</li><li>Hewan peliharaan tidak diperbolehkan</li><li>Pesta dan acara tidak diizinkan</li>",
+      "details.safety.h": "Keselamatan & Keamanan",
+      "details.safety.list": "<li>Detektor asap, alat pemadam api, dan kotak P3K tersedia di lokasi</li><li>Kamera keamanan hanya di bagian luar bangunan (tidak ada di dalam ruangan)</li>",
+      "details.lang.h": "Bahasa & Izin",
+      "details.lang.list": "<li>Bahasa: Inggris, Jepang, Melayu, Mandarin, Korea, Prancis</li><li>Berizin berdasarkan Undang-Undang Usaha Hotel Jepang: No. 7-Sumida-Eisei-Kan-977 (Kota Sumida, Tokyo)</li>",
+      "access.h2": "Akses",
+      "access.airport.h": "Dari Bandara",
+      "access.airport.list": "<li>Bandara Haneda: sekitar 50 menit dengan Toei Asakusa Line langsung (melalui Stasiun Oshiage)</li><li>Bandara Narita: sekitar 60 menit dengan Keisei Skyliner (melalui Stasiun Oshiage)</li>",
+      "access.address.h": "Alamat",
+      "access.address.body": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo 131-0032<br>muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
+      "access.address.openMap": "Buka di Google Maps →",
+      "access.address.coin": "Parkir koin di dekat lokasi (3 menit jalan kaki, sekitar ¥2,300/hari)",
+      "access.station.h": "Stasiun Terdekat",
+      "access.station.list": "<li>Stasiun Hikifune (Keisei Oshiage Line): sekitar 7 menit jalan kaki</li><li>Stasiun Higashi-Mukojima (Tobu Skytree Line): sekitar 10 menit jalan kaki</li><li>Stasiun Oshiage / Tokyo Skytree (Tokyo Metro Hanzomon Line): sekitar 20 menit jalan kaki</li>",
+      "access.area.h": "Lingkungan Sekitar",
+      "access.area.p": "Kawasan shitamachi tradisional yang tenang di Sumida — Hikifune — titik berangkat yang praktis dan penuh karakter bagi wisatawan Muslim.",
+      "access.area.list": "<li>Minimarket (FamilyMart): sekitar 5 menit jalan kaki / ATM: sekitar 3 menit jalan kaki</li><li>Supermarket & jalan pertokoan Hatonomachi-dori: 1–2 menit jalan kaki, praktis untuk belanja kebutuhan</li><li>Taman Mukojima-Hyakkaen, Kuil Shirahige & sakura-mochi Chomeiji: jalan-jalan bernuansa Tokyo lama dalam 10 menit</li>",
+      "access.muslim.h": "Tempat Ramah Muslim di Sekitar",
+      "access.muslim.list": "<li>Ruang Salat Lantai 5 Tokyo Skytree: sekitar 20 menit jalan kaki — praktis untuk salat di sela berwisata.</li><li>Masjid Kinshicho: sekitar 10 menit dengan kereta atau taksi, termasuk untuk salat Jumat berjamaah.</li><li>Masjid Asakusa: sekitar 10 menit dengan kereta. Titik berkumpul utama di Tokyo dengan akses mudah ke informasi salat dan panduan makanan halal.</li><li>Tokyo Camii (Yoyogi-Uehara): sekitar 35 menit dengan kereta. Salah satu masjid terbesar di Jepang sekaligus pusat budaya.</li>",
+      "access.sights.h": "Ke Tempat Wisata Utama",
+      "access.sights.list": "<li>Tokyo Skytree / Solamachi: 18 menit jalan kaki atau 1 stasiun dengan kereta (sekitar 3 menit)</li><li>Asakusa / Senso-ji / Nakamise: sekitar 10 menit dengan kereta</li><li>Ginza: sekitar 25 menit dengan kereta (Toei Asakusa / Tokyo Metro)</li><li>Shinjuku: sekitar 30 menit dengan kereta</li><li>Shibuya: sekitar 35 menit dengan kereta (Tokyo Metro Hanzomon, langsung)</li><li>Akihabara / Stasiun Tokyo: sekitar 20 menit dengan kereta</li>",
+      "access.note": "Berwisata, berbelanja, dan menuju bandara — semuanya mudah dijangkau dari satu atap.",
+      "faq.h2": "Pertanyaan yang Sering Diajukan",
+      "faq.q1": "T. Apakah tersedia tempat parkir?",
+      "faq.a1": "J. Properti tidak memiliki parkir khusus, namun ada 2 parkir koin dalam jarak 3 menit jalan kaki (sekitar ¥2,300/hari).<br /><a href='https://maps.app.goo.gl/wy3KnDcQJTw2JXzz8' target='_blank' rel='noopener' class='access-link'>Parkir Koin 1 / Google Maps →</a><br /><a href='https://maps.app.goo.gl/RtEGXnhfjDajRvmy8' target='_blank' rel='noopener' class='access-link'>Parkir Koin 2 / Google Maps →</a><br /><span class='note-small'>※ Parkir Koin 2 berada di jalan yang sempit — mohon berkendara dengan hati-hati.</span>",
+      "faq.q2": "T. Pukul berapa waktu check-in dan check-out?",
+      "faq.a2": "J. Check-in mulai pukul 16:00 dan check-out paling lambat pukul 10:00. Self check-in nirkontak melalui smart lock — tak perlu khawatir bila Anda tiba larut malam.",
+      "faq.q3": "T. Apakah tersedia sarapan atau restoran?",
+      "faq.a3": "J. Kami tidak menyediakan makanan. Anda dapat memasak di dapur khusus halal (peralatan masak, peralatan makan, dan bumbu tersedia), dan kami menyediakan panduan pilihan restoran halal di sekitar.",
+      "faq.q4": "T. Apakah ada layanan antar-jemput bandara?",
+      "faq.a4": "J. Tidak ada layanan antar-jemput, namun transportasi umum sangat mudah: sekitar 50 menit dengan kereta dari Bandara Haneda dan sekitar 60 menit dari Bandara Narita.",
+      "faq.q5": "T. Bolehkah anak-anak ikut menginap?",
+      "faq.a5": "J. Anak segala usia dipersilakan (tamu 18+ dihitung sebagai dewasa). Boks bayi dan tempat tidur tambahan tidak tersedia, sehingga anak kecil berbagi alas tidur yang ada.",
+      "faq.q6": "T. Apakah hewan peliharaan atau merokok diperbolehkan?",
+      "faq.a6": "J. Hewan peliharaan tidak diperbolehkan, dan seluruh rumah bebas rokok. Untuk menjaga lingkungan halal, mohon juga tidak membawa alkohol atau produk babi.",
+      "faq.q7": "T. Apakah bisa menginap dalam jangka panjang?",
+      "faq.a7": "J. Bisa — menginap 28 malam atau lebih, termasuk lebih dari sebulan, kami persilakan dengan senang hati. Jangan ragu menghubungi kami.",
+      "faq.q8": "T. Bagaimana kebijakan pembatalannya?",
+      "faq.a8": "J. Pembatalan gratis dengan pengembalian dana penuh hingga 7 hari sebelum check-in — Anda dapat membatalkan sendiri melalui tautan di email konfirmasi. Setelah itu, dikenakan 50% dari total hingga 3 hari sebelum check-in, dan 100% mulai 2 hari sebelum check-in, termasuk bila tidak hadir. Mohon hubungi kami lebih awal bila perlu mengubah tanggal.",
+      "faq.q9": "T. Bagaimana cara pembayarannya?",
+      "faq.a9": "J. Seluruh biaya dibayarkan dengan aman melalui PayPal saat pemesanan (kartu kredit juga bisa — tanpa perlu akun PayPal). Reservasi Anda terkonfirmasi begitu pembayaran selesai.",
+
+      "bookBar.text": "Reservasi hunian istirahat yang dalam.",
+      "bookBar.textShort": "Reservasi menginap Anda",
+      "bookBar.cta": "Pesan",
+      "bookBar.details": "Detail Properti",
+      "bookBar.detailsShort": "Detail",
+      "guides.h2": "Panduan Lokal",
+      "guides.intro": "Panduan dari kami tentang lingkungan sekitar — tempat makan halal, tempat salat, dan cara merencanakan hari-hari Anda di Tokyo dari vila.",
+      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/id/'><span class='gl-lbl'>Panduan 01</span>Restoran halal &amp; masjid dekat Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/id/'><span class='gl-lbl'>Panduan 02</span>Itinerary Tokyo 4 hari yang ramah Muslim</a><a class='guide-link' href='/guide/ramadan-in-tokyo/id/'><span class='gl-lbl'>Panduan 03</span>Ramadan di Tokyo — tanggal, buka puasa &amp; jam puasa</a>"
+    },
+    ms: {
+      "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
+      "meta.description": "Hotel mesra Muslim di Tokyo — vila persendirian berhampiran Tokyo Skytree. 2 ruang solat, arah kiblat, dapur halal sepenuhnya dan bilik air untuk wuduk.",
+
+      "hero.sub": "Mesra Muslim · Vila Persendirian Susunan Doktor",
+      "hero.lead": "Rumah berusia 50 tahun, diubah suai sepenuhnya — kediaman Jepun yang membawa warisan tenangnya ke hari ini.<br />Layanan mesra Muslim dan reka bentuk tidur susunan doktor, disatukan di bawah satu bumbung.",
+      "hero.spec": "Sehingga 10 Tetamu · 3 Bilik Tidur · 6 Katil<br class='br-sm'> · 1 Bilik Air · 66&nbsp;㎡",
+      "hero.meta.group": "<b>Satu Kumpulan</b>Setiap Malam",
+
+      "menu.aside.intro": "Vila persendirian mesra Muslim dan prihatin halal di Tokyo. Di sini, iman dan kehidupan seharian tidak pernah dikompromikan.",
+      "menu.aside.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+
+      "prologue.h2": "Kediaman penuh keramahan<br />dan <em>tidur yang lena</em>.",
+      "prologue.p1": "Rumah kayu berusia 50 tahun, diubah suai sepenuhnya — kediaman tenang yang mengekalkan warisan Jepunnya, tempat penginapan anda terasa selesa dan tidur anda benar-benar lena.",
+      "prologue.p2": "THE HOSPITEL by Dr. ialah vila persendirian seluruh rumah, direka bersama penduduk Muslim di Jepun agar tetamu Muslim dapat menginap di Tokyo dengan tenang hati dan selesa.",
+      "prologue.p3": "Persekitaran tidur susunan doktor menghilangkan keletihan perjalanan dengan tenang. Hanya satu kumpulan dialu-alukan setiap malam.",
+
+      "feature.h2": "Sebuah <em>rumah</em><br />untuk iman dan rehat yang mendalam.",
+      "feature.p1": "Kediaman seluruh rumah berusia 50 tahun di lorong tenang Sumida. Rumah rakyat lama ini diubah suai sepenuhnya — tiang, rasuk, fusuma dan tatami masih menyimpan jejak kehidupan silamnya — sementara setiap perincian dibentuk agar tetamu Muslim dapat berehat dengan ketenangan seperti di rumah sendiri, walaupun di negara asing.",
+      "feature.p2": "Dua ruang solat, arah kiblat, bidet, pinggan mangkuk khusus halal dan dapur, bilik air yang bersih untuk wuduk — serta persekitaran tidur susunan doktor: pencahayaan hangat, peralatan tidur pilihan, mandian herba. Iman dan rehat yang mendalam, kedua-duanya dihormati di bawah satu bumbung.",
+      "feature.type": "Kediaman Persendirian · Sewaan Seluruh Rumah",
+      "feature.capacity": "Satu kumpulan setiap malam",
+      "feature.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+
+      "story.h2": "<em>Kisah</em><br />di sebalik pintu kami.",
+      "story.lead": "Penginapan tanpa kompromi.",
+      "story.p1": "Asakusa, Skytree, Ginza, Shibuya, Shinjuku — kepelbagaian unik Tokyo dihargai seluruh dunia. Namun bagi pengembara Muslim, kerisauan kecil — tempat untuk solat, makanan halal, kemudahan air yang bersih — boleh terkumpul secara senyap. Tambahan pula, tidur lena yang menghilangkan keletihan perjalanan sering sukar ditemui di luar negara.",
+      "story.pull": "Apabila sebuah kediaman membolehkan anda kekal menjadi diri sendiri,<br />barulah perjalanan itu benar-benar bebas.",
+      "story.p3": "Melalui kerja perubatan antarabangsa, saya berpeluang bertemu ramai pengembara Muslim. Agar mereka dapat menikmati budaya Jepun dan pulang membawa rehat yang sebenar, tanpa mengorbankan iman mahupun kebiasaan — niat itulah yang membentuk keseluruhan rumah ini, sebagai kediaman mesra Muslim yang dibina atas reka bentuk tidur susunan doktor.",
+      "story.p5": "Kehidupan seharian Muslim dan tidur lena susunan doktor — kedua-duanya terpelihara utuh di bawah satu bumbung. Dengan niat inilah kami membuka muslim-friendly STAY TOKYO (THE HOSPITEL by Dr.).",
+
+      "spaces.h2": "Ruang tenang untuk<br /><em>solat</em> dan kehidupan seharian.",
+      "spaces.note": "Ruang untuk solat, dapur untuk memasak sendiri, bilik air bersih untuk wuduk, bilik tatami. Rumah ini dibentuk agar tetamu Muslim dapat mengekalkan rutin harian mereka, walaupun ketika menginap di Tokyo.",
+      "spaces.01.h3": "Dua Ruang Solat &amp; Arah Kiblat",
+      "spaces.02.h3": "Bilik Air Bersih untuk Wuduk",
+      "spaces.03.h3": "Tiga Bilik Tidur",
+      "spaces.04.h3": "Dapur untuk Memasak Sendiri",
+      "spaces.04.desc": "Dapur untuk penginapan panjang —<br>masak dengan tenang hati.",
+      "spaces.04.tags": "Tanpa Khinzir · Tanpa Alkohol",
+      "spaces.05.h3": "Pinggan Mangkuk &amp; Peralatan Masak Khusus Muslim",
+      "spaces.06.h3": "Bidet",
+      "spaces.07.h3": "Ruang Makan",
+
+      "bleed1.h3": "Warisan dan tidur yang lena,<br />di bawah bumbung yang sama.",
+
+      "sleep.h2": "<span>Untuk tetamu Muslim kami,</span><span><em>tujuh</em> janji.</span>",
+      "sleep.intro": "Suasana yang dibentuk dengan teliti untuk menghormati kehidupan seharian dan kebiasaan Muslim, setiap perincian dijaga rapi.",
+      "sleep.01.h3": "Dua Ruang Solat &amp; Arah Kiblat",
+      "sleep.01.p": "Dua ruang solat berasingan di dalam rumah. Sama ada mengikut jantina, keluarga, atau ketika waktu solat bertindih, setiap solat dapat ditunaikan dengan tenang dan khusyuk.",
+      "sleep.01.s1": "Boleh diasingkan mengikut jantina atau waktu",
+      "sleep.01.s2": "Bilik berasingan yang bersih dan tenang",
+      "sleep.01.s3": "Sejadah sentiasa tersedia",
+      "sleep.02.h3": "Sejadah · Al-Quran · Hijab, untuk Dipinjam",
+      "sleep.02.p": "Kembara dengan ringan. Sejadah, Al-Quran dan hijab disediakan untuk pinjaman percuma — persekitaran untuk solat, sedia sebaik sahaja anda tiba.",
+      "sleep.02.s1": "Sejadah",
+      "sleep.02.s2": "Al-Quran",
+      "sleep.02.s3": "Hijab — pinjaman percuma",
+      "sleep.03.h3": "Bilik Air Bersih untuk Wuduk &amp;<br>Kelengkapan Mandian Organik",
+      "sleep.03.p": "Bilik air bersih untuk wuduk, tempat anda dapat bersantai tanpa gangguan orang lain, dilengkapi kelengkapan mandian organik yang lembut di kulit. Saat berendam yang menenangkan dan memulihkan — sepenuhnya dalam keselesaan.",
+      "sleep.03.s1": "Bilik air bersih untuk wuduk, satu kumpulan sehari",
+      "sleep.03.s2": "Kelengkapan mandian organik",
+      "sleep.03.s3": "Syampu dan sabun badan yang lembut di kulit",
+      "sleep.04.h3": "Pinggan Mangkuk &amp; Peralatan Masak Halal<br>Dapur untuk Memasak Sendiri<br>Peti Sejuk Besar",
+      "sleep.04.p": "Pinggan mangkuk dan peralatan masak khusus halal (Tanpa khinzir / Tanpa alkohol). Peti sejuk besar, dapur masak, periuk, pisau — segala keperluan memasak disediakan, agar hidangan keluarga kekal di tangan anda walaupun untuk penginapan panjang.",
+      "sleep.04.s1": "Pinggan mangkuk dan peralatan masak khusus halal",
+      "sleep.04.s2": "Tanpa khinzir / Tanpa alkohol",
+      "sleep.04.s3": "Peti sejuk, dapur masak dan peralatan dapur lengkap",
+      "sleep.05.h3": "Masjid &amp; Restoran Halal Berdekatan",
+      "sleep.05.p": "Panduan asli masjid dan restoran halal dalam jarak berjalan kaki dan kereta api. Tiada lagi keraguan tentang solat atau makanan, walaupun ketika anda menjelajah Tokyo.",
+      "sleep.05.s1": "Senarai masjid berdekatan (jarak berjalan kaki &amp; kereta api)",
+      "sleep.05.s2": "Panduan pilihan restoran halal",
+      "sleep.05.s3": "Tempat menarik dan laluan mesra Muslim",
+      "sleep.06.h3": "Dilengkapi Bidet &amp; Pembersihan Bebas Alkohol",
+      "sleep.07.h3": "Santuari Tidur Susunan Doktor",
+      "sleep.07.p": "Persekitaran susunan doktor untuk tidur yang lena. Terokai perinciannya.",
+      "sleep.07.cta": "Lihat &ldquo;Kehidupan seharian, dengan tidur yang lena.&rdquo; →",
+      "sleep.06.p": "Pembersihan hanya menggunakan bahan cuci bebas alkohol, dijaga rapi di setiap sudut. Setiap tandas dilengkapi bidet — kekalkan amalan bersuci anda, dan menginaplah dengan tenang hati.",
+      "sleep.06.s1": "Pembersihan bebas alkohol",
+      "sleep.06.s2": "Bidet pada setiap tandas",
+      "sleep.06.s3": "Kemudahan air yang menyokong wuduk",
+      "sleep.labelOpen": "Lihat perincian",
+      "sleep.labelClose": "Tutup",
+
+      "options.h2": "Kehidupan seharian, dengan <em>tidur yang lena</em>.",
+      "options.lead": "Di samping layanan mesra Muslim, kearifan perubatan. Cahaya, peralatan tidur, mandian, teh — setiap elemen yang membentuk malam anda disusun dengan penuh teliti oleh doktor.",
+      "options.01.h3": "Pencahayaan Lembut yang Hangat<br />&amp; Dalaman yang Tenang",
+      "options.01.p": "Cahaya bernada hangat, untuk tidur dan bangun secara semula jadi. Dalaman berwarna dakwat pekat menyingkirkan gangguan visual dan menenangkan minda dengan lembut.",
+      "options.01.s4": "Tiga bahan: hitam dakwat, kertas washi, kayu asli",
+      "options.01.s5": "Pencahayaan bilik tidur: 10–50 lux, tidak langsung",
+      "options.02.h3": "Tilam Premium NELL<br />Buatan Jepun &amp; Peralatan Tidur",
+      "options.02.p": "Setiap bilik tidur dilengkapi NELL — tilam sleep-tech buatan Jepun dengan 1,734 gegelung poket dan struktur pinggang Center Hard untuk pusingan badan yang semula jadi. Dipadankan dengan linen pilihan doktor.",
+      "options.02.s1": "Tilam &lsquo;NELL&rsquo; buatan Jepun (1,734 gegelung poket berketumpatan tinggi)",
+      "options.02.s2": "Struktur Center Hard yang menyokong pusingan badan semula jadi",
+      "options.02.s3": "Gegelung poket berdiameter kecil dengan pengudaraan tinggi",
+      "options.02.s4": "Diperakui bebas formaldehid F&#9734;&#9734;&#9734;&#9734;",
+      "options.02.s5": "Ujian ketahanan patuh JIS, jaminan 10 tahun",
+      "options.03.h3": "Teh Herba Penenang Tidur<br />Berasaskan Tumbuhan<br />&amp; Mandian Herba",
+      "options.03.p": "Mandian herba daripada ramuan kampo berasaskan tumbuhan, dan teh herba yang membantu tidur — bebas kafein, bebas alkohol. Rehat yang meresap dalam hingga ke seluruh tubuh.",
+      "options.03.s1": "Tujuh herba berasaskan tumbuhan, termasuk angelica, cnidium dan halia",
+      "options.03.s4": "Adunan malam berasaskan sansohnin-to (bebas kafein)",
+      "options.03.s5": "Cenderahati bawa pulang pilihan doktor kampo",
+
+      "journal.h2": "Seorang doktor tentang<br /><em>keramahan</em>.",
+      "journal.quote": "Kehidupan seharian mahupun tidur tidak seharusnya diketepikan dalam perjalanan —",
+      "journal.p1": "Melalui kerja perubatan antarabangsa, saya mendapati ramai pengembara Muslim diam-diam memikul kerisauan kecil sepanjang penginapan mereka di Jepun.",
+      "journal.p2": "Melalui kerja perubatan antarabangsa, saya bertemu ramai pengembara Muslim yang memikul kerisauan kecil di Jepun — tempat untuk solat, makanan halal, kemudahan air yang bersih, dan tidur yang nyenyak dalam persekitaran yang asing.",
+      "journal.p3": "muslim-friendly STAY TOKYO (THE HOSPITEL by Dr.) dibina untuk melenyapkan kerisauan itu dengan lembut, melalui persekitaran tidur susunan doktor dan perincian yang dibentuk bersama penduduk Muslim di Jepun. Semoga perjalanan anda diberkati.",
+
+      "press.h2": "Seperti dipaparkan dalam media.",
+      "press.cite": "Nikkan Kogyo Shimbun",
+      "press.title": "Penginapan gaya Jepun tempat tetamu antarabangsa tidur lena<br>—rumah rakyat lama yang diubah suai di Sumida, Tokyo.",
+      "press.p": "THE HOSPITEL by Dr., kediaman satu rumah susunan doktor dengan reka bentuk berfokuskan tidur, telah dipaparkan dalam Nikkan Kogyo Shimbun sebagai penginapan gaya Jepun yang menghadiahkan tidur pemulih kepada pelawat antarabangsa.",
+      "social.lead": "Suasana harian rumah ini dan berita terkini kami — ikuti di saluran media sosial kami.",
+
+      "bleed2.h3": "Kehidupan seharian dan tidur yang lena —<br />bernafas di bawah bumbung yang sama.",
+
+      "info.h2": "Tentang Rumah Ini",
+      "info.p": "Persinggahan untuk satu kumpulan semalam, di kejiranan Tokyo yang tenang. Waktu daftar masuk dan perincian kemudahan akan dikongsi secara individu setelah tempahan anda disahkan.",
+      "info.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+      "info.type": "Kediaman Persendirian · Sewaan Seluruh Rumah",
+      "info.capacity": "Satu kumpulan setiap malam",
+      "info.checkin": "Dari 16:00",
+      "info.checkout": "Sehingga 10:00",
+      "info.amenity": "Dua ruang solat / Penunjuk arah kiblat / Bidet / Pinjaman sejadah·Al-Quran·hijab / Pinggan mangkuk &amp; dapur khusus halal / Pembersihan bebas alkohol / Bilik air bersih untuk wuduk / Pencahayaan hangat / Tilam NELL &amp; peralatan tidur pilihan doktor / Mandian herba &amp; teh herba (berasaskan tumbuhan)",
+      "info.option": "Ruang tidur susunan doktor / Mandian herba &amp; teh herba berasaskan tumbuhan / Panduan masjid &amp; restoran halal berdekatan",
+
+      "booking.h2": "Tempah<br />kediaman rehat yang mendalam.",
+      "booking.checkin": "Daftar Masuk",
+      "booking.checkout": "Daftar Keluar",
+      "booking.guests": "Tetamu",
+      "booking.cal.title": "Kalendar Kekosongan",
+      "booking.cal.open": "Tersedia",
+      "booking.cal.closed": "Ditempah",
+      "booking.cal.hint": "Ketik tarikh yang tersedia untuk mengisi daftar masuk dan daftar keluar anda di bawah.",
+      "booking.note": "Semak kekosongan dan bayar dengan selamat (PayPal diterima) — semuanya di laman rasmi kami.",
+      "booking.cta": "Semak Kekosongan &amp; Tempah",
+      "booking.bestRate": "Tempahan terus di laman rasmi kami menjamin kadar terbaik — tanpa yuran agensi.",
+      "booking.otaLead": "Turut tersedia di:",
+
+      "footer.intro": "Kediaman kayu berusia 50 tahun yang diubah suai sepenuhnya — rumah warisan yang tenang di Sumida, Tokyo, tempat kehidupan seharian Muslim dan tidur lena susunan doktor bertemu di bawah satu bumbung.",
+      "footer.operator.company": "Ishi-no-Fudousan Co., Ltd.",
+      "footer.operator.address": "5-16-10-3 Honkomagome, Bunkyo-ku, Tokyo 113-0021, Japan",
+
+      "details.h2": "Perincian Kediaman",
+      "details.spec": "Sehingga 10 Tetamu · 3 Bilik Tidur · 6 Katil · 1 Bilik Air · 66 ㎡",
+      "opt.labelOpen": "Lihat Perincian",
+      "opt.labelClose": "Tutup",
+      "details.bed.h": "Peralatan Tidur",
+      "details.bed.list": "<li>Bilik Tidur 1: 1 katil Queen (160×200 cm) + 1 tilam bujang lipat tiga (100×200 cm)</li><li>Bilik Tidur 2: 1 katil Queen (160×200 cm) + 1 tilam bujang lipat tiga (100×200 cm)</li><li>Bilik Tidur 3: 2 katil Queen (160×200 cm)</li>",
+      "details.bed.p": "Selesa untuk sehingga 10 tetamu — sesuai untuk kumpulan besar atau penginapan keluarga.",
+      "details.checkin.h": "Daftar Masuk / Daftar Keluar",
+      "details.checkin.list": "<li>Daftar masuk: dari 4:00 petang (16:00). Daftar keluar: sebelum 10:00 pagi. Daftar masuk sendiri tanpa sentuhan melalui kunci pintar.</li><li>Dari 12:00 tengah hari, anda boleh membuka kunci dan meletakkan bagasi di dalam. Sila jangan membuka barang atau menggunakan kemudahan sebelum waktu daftar masuk.</li><li>Sila keluar tepat pada masanya selepas daftar keluar bagi memberi laluan kepada pembersihan. Daftar keluar lewat dikenakan JPY 5,000 bagi setiap jam selepas 10:00 pagi.</li><li>Bagasi tidak dapat disimpan selepas daftar keluar — sila gunakan lokar berbayar di stesen.</li>",
+      "details.amenity.h": "Kemudahan & Peralatan",
+      "details.amenity.p": "Kediaman serba lengkap yang disediakan untuk penginapan yang selesa.",
+      "details.amenity.free.h": "Percuma",
+      "details.amenity.free.list": "<li>Wi-Fi berkelajuan tinggi</li><li>Penyaman udara & pemanas di setiap bilik</li><li>Mesin basuh / Pengering / Pembersih vakum</li><li>Penyangkut & rak gantung baju</li><li>Meja kerja</li>",
+      "details.amenity.kitchen.h": "Dapur",
+      "details.amenity.kitchen.list": "<li>Peti sejuk & penyejuk beku besar / Cerek elektrik / Dapur IH / Ketuhar gelombang mikro / Ketuhar</li><li>Pinggan mangkuk & peralatan masak khusus halal / Kutleri / Set pinggan lengkap</li><li>Minyak masak & perencah asas</li><li>Pinggan mangkuk kanak-kanak</li>",
+      "details.amenity.toilet.h": "Tandas",
+      "details.amenity.toilet.list": "<li>2 tandas, dilengkapi bidet</li>",
+      "details.amenity.bath.h": "Bilik Air & Kelengkapan Mandian",
+      "details.amenity.bath.list": "<li>Syampu / Perapi / Sabun badan / Sabun tangan</li><li>Berus gigi / Pencukur</li><li>2 pengering rambut</li><li>Tuala mandi, tuala muka, alas kaki bilik air</li>",
+      "details.amenity.note": "※ Linen tidak ditukar sepanjang penginapan.",
+      "details.notes.h": "Peraturan & Perhatian",
+      "details.notes.list1": "<li>Dilarang merokok sama sekali</li><li>Dilarang membawa masuk alkohol</li><li>Dilarang membawa masuk khinzir</li>",
+      "details.notes.access.h": "Kawasan Akses Tetamu",
+      "details.notes.access.p": "Almari simpanan berkunci di bilik tidur tingkat 2 menyimpan peralatan pembersihan dan linen — sila jangan buka.",
+      "details.notes.other.h": "Nota Lain",
+      "details.notes.other.list": "<li>Penginapan panjang dialu-alukan — 28 malam dan ke atas tersedia</li>",
+      "details.rules.h": "Peraturan Rumah",
+      "details.rules.list": "<li>Kanak-kanak semua peringkat umur dialu-alukan (tetamu 18 tahun ke atas dikenakan kadar dewasa)</li><li>Tiada katil bayi atau katil tambahan disediakan</li><li>Haiwan peliharaan tidak dibenarkan</li><li>Parti dan acara tidak dibenarkan</li>",
+      "details.safety.h": "Keselamatan & Sekuriti",
+      "details.safety.list": "<li>Pengesan asap, alat pemadam api dan kit pertolongan cemas disediakan</li><li>Kamera keselamatan di bahagian luar bangunan sahaja (tiada di dalam)</li>",
+      "details.lang.h": "Bahasa & Lesen",
+      "details.lang.list": "<li>Bahasa: Inggeris, Jepun, Melayu, Cina, Korea, Perancis</li><li>Berlesen di bawah Akta Perniagaan Hotel Jepun: No. 7-Sumida-Eisei-Kan-977 (Bandar Sumida, Tokyo)</li>",
+      "access.h2": "Akses",
+      "access.airport.h": "Dari Lapangan Terbang",
+      "access.airport.list": "<li>Lapangan Terbang Haneda: ~50 minit menaiki Laluan Toei Asakusa secara terus (melalui Stesen Oshiage)</li><li>Lapangan Terbang Narita: ~60 minit menaiki Keisei Skyliner (melalui Stesen Oshiage)</li>",
+      "access.address.h": "Alamat",
+      "access.address.body": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo 131-0032<br>muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
+      "access.address.openMap": "Buka di Google Maps →",
+      "access.address.coin": "Tempat letak kereta berbayar berdekatan (3 minit berjalan kaki, kira-kira ¥2,300/hari)",
+      "access.station.h": "Stesen Terdekat",
+      "access.station.list": "<li>Stesen Hikifune (Laluan Keisei Oshiage): ~7 minit berjalan kaki</li><li>Stesen Higashi-Mukojima (Laluan Tobu Skytree): ~10 minit berjalan kaki</li><li>Stesen Oshiage / Tokyo Skytree (Laluan Tokyo Metro Hanzomon): ~20 minit berjalan kaki</li>",
+      "access.area.h": "Kejiranan",
+      "access.area.p": "Kejiranan shitamachi tradisional yang tenang di Sumida — Hikifune — pangkalan yang mudah dan penuh karakter untuk pengembara Muslim.",
+      "access.area.list": "<li>Kedai serbaneka (FamilyMart): ~5 minit berjalan kaki / ATM: ~3 minit berjalan kaki</li><li>Pasar raya & jalan membeli-belah Hatonomachi-dori: 1–2 minit berjalan kaki, mudah untuk barangan dapur</li><li>Taman Mukojima-Hyakkaen, Kuil Shirahige & sakura-mochi Chomeiji: santaian bergaya Tokyo lama dalam lingkungan 10 minit</li>",
+      "access.muslim.h": "Lokasi Mesra Muslim Berdekatan",
+      "access.muslim.list": "<li>Ruang Solat Tingkat 5 Tokyo Skytree: ~20 minit berjalan kaki — mudah untuk menunaikan solat sambil bersiar-siar.</li><li>Masjid Kinshicho: ~10 minit menaiki kereta api atau teksi, termasuk untuk solat Jumaat berjemaah.</li><li>Masjid Asakusa: ~10 minit menaiki kereta api. Pusat pertemuan utama di Tokyo dengan akses mudah kepada maklumat solat dan panduan makanan halal.</li><li>Tokyo Camii (Yoyogi-Uehara): ~35 minit menaiki kereta api. Antara masjid terbesar di Jepun dan sebuah pusat kebudayaan.</li>",
+      "access.sights.h": "Ke Tempat Pelancongan Utama",
+      "access.sights.list": "<li>Tokyo Skytree / Solamachi: 18 minit berjalan kaki atau 1 perhentian kereta api (~3 minit)</li><li>Asakusa / Senso-ji / Nakamise: ~10 minit menaiki kereta api</li><li>Ginza: ~25 minit menaiki kereta api (Toei Asakusa / Tokyo Metro)</li><li>Shinjuku: ~30 minit menaiki kereta api</li><li>Shibuya: ~35 minit menaiki kereta api (Tokyo Metro Hanzomon, terus)</li><li>Akihabara / Stesen Tokyo: ~20 minit menaiki kereta api</li>",
+      "access.note": "Bersiar-siar, membeli-belah dan perjalanan ke lapangan terbang — semuanya mudah dicapai dari satu bumbung.",
+      "faq.h2": "Soalan Lazim",
+      "faq.q1": "S. Adakah tempat letak kereta disediakan?",
+      "faq.a1": "J. Kediaman ini tiada tempat letak kereta khas, tetapi terdapat 2 tempat letak kereta berbayar dalam jarak 3 minit berjalan kaki (kira-kira ¥2,300/hari).<br /><a href='https://maps.app.goo.gl/wy3KnDcQJTw2JXzz8' target='_blank' rel='noopener' class='access-link'>Tempat Letak Kereta 1 / Google Maps →</a><br /><a href='https://maps.app.goo.gl/RtEGXnhfjDajRvmy8' target='_blank' rel='noopener' class='access-link'>Tempat Letak Kereta 2 / Google Maps →</a><br /><span class='note-small'>※ Tempat Letak Kereta 2 terletak di jalan yang sempit — sila pandu dengan berhati-hati.</span>",
+      "faq.q2": "S. Pukul berapakah waktu daftar masuk dan daftar keluar?",
+      "faq.a2": "J. Daftar masuk dari 4:00 petang dan daftar keluar sebelum 10:00 pagi. Daftar masuk sendiri tanpa sentuhan melalui kunci pintar — tiada masalah jika anda tiba lewat.",
+      "faq.q3": "S. Adakah sarapan atau restoran disediakan?",
+      "faq.a3": "J. Makanan tidak disediakan. Anda boleh memasak di dapur khusus halal (peralatan masak, pinggan mangkuk dan perencah disediakan), dan kami menyediakan panduan pilihan restoran halal berdekatan.",
+      "faq.q4": "S. Adakah perkhidmatan pengangkutan dari lapangan terbang?",
+      "faq.a4": "J. Tiada perkhidmatan pengangkutan khas, tetapi pengangkutan awam amat mudah: kira-kira 50 minit menaiki kereta api dari Lapangan Terbang Haneda dan kira-kira 60 minit dari Lapangan Terbang Narita.",
+      "faq.q5": "S. Bolehkah kanak-kanak menginap?",
+      "faq.a5": "J. Kanak-kanak semua peringkat umur dialu-alukan (tetamu 18 tahun ke atas dikenakan kadar dewasa). Katil bayi dan katil tambahan tidak disediakan, jadi kanak-kanak kecil berkongsi peralatan tidur sedia ada.",
+      "faq.q6": "S. Adakah haiwan peliharaan atau merokok dibenarkan?",
+      "faq.a6": "J. Haiwan peliharaan tidak dibenarkan, dan seluruh rumah adalah kawasan larangan merokok. Bagi memelihara persekitaran halal, sila elakkan juga daripada membawa masuk alkohol atau khinzir.",
+      "faq.q7": "S. Bolehkah menginap untuk tempoh panjang?",
+      "faq.a7": "J. Boleh — penginapan 28 malam atau lebih, termasuk melebihi sebulan, dialu-alukan. Jangan segan untuk menghubungi kami.",
+      "faq.q8": "S. Apakah polisi pembatalan?",
+      "faq.a8": "J. Pembatalan percuma dengan bayaran balik penuh sehingga 7 hari sebelum daftar masuk — anda boleh membatalkan sendiri melalui pautan dalam e-mel pengesahan anda. Selepas itu, 50% daripada jumlah keseluruhan dikenakan sehingga 3 hari sebelum, dan 100% dari 2 hari sebelum daftar masuk, termasuk jika tidak hadir. Sila hubungi kami lebih awal jika anda perlu menukar tarikh.",
+      "faq.q9": "S. Bagaimanakah cara pembayaran?",
+      "faq.a9": "J. Jumlah penuh dibayar dengan selamat melalui PayPal semasa membuat tempahan (kad kredit juga boleh digunakan — akaun PayPal tidak diperlukan). Tempahan anda disahkan sebaik sahaja pembayaran selesai.",
+
+      "bookBar.text": "Tempah kediaman rehat yang mendalam.",
+      "bookBar.textShort": "Tempah penginapan anda",
+      "bookBar.cta": "Tempah",
+      "bookBar.details": "Perincian Kediaman",
+      "bookBar.detailsShort": "Perincian",
+      "guides.h2": "Panduan Tempatan",
+      "guides.intro": "Panduan daripada kami tentang kawasan sekitar — tempat makan halal, tempat solat, dan cara merancang hari anda di Tokyo dari vila.",
+      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/ms/'><span class='gl-lbl'>Panduan 01</span>Restoran halal &amp; masjid berhampiran Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/ms/'><span class='gl-lbl'>Panduan 02</span>Itinerari Tokyo 4 hari mesra Muslim</a><a class='guide-link' href='/guide/ramadan-in-tokyo/ms/'><span class='gl-lbl'>Panduan 03</span>Ramadan di Tokyo — tarikh, iftar &amp; waktu puasa</a>"
     }
   };
 
   function setLang(lang){
-    if (lang !== 'ja' && lang !== 'en') lang = 'en';
-    var dict = translations[lang];
+    if (lang !== 'ja' && lang !== 'en' && lang !== 'id' && lang !== 'ms') lang = 'en';
+    var dict = translations[lang] || translations.en;
     document.documentElement.lang = lang;
-    document.body.classList.remove('lang-ja','lang-en');
+    document.body.classList.remove('lang-ja','lang-en','lang-id','lang-ms');
     document.body.classList.add('lang-' + lang);
+    if (lang === 'id' || lang === 'ms') document.body.classList.add('lang-en');
     var nodes = document.querySelectorAll('[data-i18n]');
     for (var i = 0; i < nodes.length; i++){
       var key = nodes[i].getAttribute('data-i18n');
@@ -2193,7 +2671,7 @@ gtag('config', 'G-FL9FTY3GKB');
       ev.preventDefault();
       if (!ci.value || !co.value || co.value <= ci.value){ ci.reportValidity(); return; }
       var nights = Math.round((new Date(co.value) - new Date(ci.value)) / 864e5);
-      var lang = document.body.classList.contains('lang-ja') ? 'ja' : 'en';
+      var lang = document.documentElement.lang || 'en';
       var url = 'book.html?checkin=' + encodeURIComponent(ci.value)
         + '&numnight=' + nights
         + '&numadult=' + encodeURIComponent(guests.value)
@@ -2219,9 +2697,14 @@ gtag('config', 'G-FL9FTY3GKB');
     function pad(n){ return (n < 10 ? '0' : '') + n; }
     function keyOf(y, m, d){ return y + '-' + pad(m + 1) + '-' + pad(d); }
     function todayKey(){ var t = new Date(); return keyOf(t.getFullYear(), t.getMonth(), t.getDate()); }
-    function curLang(){ return document.body.classList.contains('lang-ja') ? 'ja' : 'en'; }
-    var MONTHS_EN = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    var DOW = { ja: ['日','月','火','水','木','金','土'], en: ['S','M','T','W','T','F','S'] };
+    function curLang(){ var l = document.documentElement.lang; return (l === 'ja' || l === 'id' || l === 'ms') ? l : 'en'; }
+    var MONTHS = {
+      en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+      id: ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],
+      ms: ['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember']
+    };
+    var MONTHS_EN = MONTHS.en;
+    var DOW = { ja: ['日','月','火','水','木','金','土'], en: ['S','M','T','W','T','F','S'], id: ['M','S','S','R','K','J','S'], ms: ['A','I','S','R','K','J','S'] };
 
     function nightsOpen(a, b){
       var d = new Date(a + 'T12:00:00'), end = new Date(b + 'T12:00:00');
@@ -2260,7 +2743,7 @@ gtag('config', 'G-FL9FTY3GKB');
         var y = dt.getFullYear(), m = dt.getMonth();
         var monthEl = document.createElement('div'); monthEl.className = 'cal-month';
         var h = document.createElement('h4');
-        h.textContent = L === 'ja' ? (y + '年' + (m + 1) + '月') : (MONTHS_EN[m] + ' ' + y);
+        h.textContent = L === 'ja' ? (y + '年' + (m + 1) + '月') : ((MONTHS[L] || MONTHS_EN)[m] + ' ' + y);
         monthEl.appendChild(h);
         var grid = document.createElement('div'); grid.className = 'cal-grid';
         for (var w = 0; w < 7; w++){
@@ -2296,8 +2779,15 @@ gtag('config', 'G-FL9FTY3GKB');
       }
       prevBtn.disabled = offset <= 0;
       nextBtn.disabled = offset >= MAX_OFFSET;
-      if (failed) updatedEl.textContent = (L === 'ja' ? '空室状況を読み込めませんでした。予約ページでご確認ください。' : 'Availability could not be loaded — please check the booking page.');
-      else if (updated) updatedEl.textContent = (L === 'ja' ? '更新: ' : 'Updated: ') + updated;
+      var CAL_MSG = {
+        ja: ['空室状況を読み込めませんでした。予約ページでご確認ください。', '更新: '],
+        en: ['Availability could not be loaded — please check the booking page.', 'Updated: '],
+        id: ['Ketersediaan kamar tidak dapat dimuat — silakan cek halaman pemesanan.', 'Diperbarui: '],
+        ms: ['Ketersediaan bilik tidak dapat dimuatkan — sila semak halaman tempahan.', 'Dikemas kini: ']
+      };
+      var MSG = CAL_MSG[L] || CAL_MSG.en;
+      if (failed) updatedEl.textContent = MSG[0];
+      else if (updated) updatedEl.textContent = MSG[1] + updated;
       else updatedEl.textContent = (L === 'ja' ? '読み込み中…' : 'Loading…');
     }
 
@@ -2320,7 +2810,7 @@ gtag('config', 'G-FL9FTY3GKB');
   (function(){
     var urlLang = null;
     try {
-      var m = window.location.search.match(/[?&]lang=(en|ja)\b/);
+      var m = window.location.search.match(/[?&]lang=(en|ja|id|ms)\b/);
       if (m) urlLang = m[1];
     } catch(e) {}
     var saved = null;
