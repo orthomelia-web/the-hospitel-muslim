@@ -726,6 +726,15 @@
   .guide-link{display:block;border:1px solid var(--line-soft);background:rgba(255,255,255,.015);padding:1.35rem 1.4rem;font-size:.88rem;line-height:1.7;color:var(--ink-sub);transition:border-color .3s,color .3s}
   .guide-link:hover{border-color:var(--gold);color:var(--ink)}
   .gl-lbl{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .guides-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.9rem}
+  .gs-card{display:block;border:1px solid var(--line-soft);background:rgba(255,255,255,.015);overflow:hidden;transition:border-color .35s,transform .35s}
+  .gs-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .gs-img{display:block;aspect-ratio:16/10;background-size:cover;background-position:center;filter:saturate(.82) brightness(.8);transition:transform 1s ease}
+  .gs-card:hover .gs-img{transform:scale(1.05)}
+  .gs-t{display:block;padding:1rem 1.1rem 1.25rem;font-size:.85rem;line-height:1.65;color:var(--ink-sub)}
+  .gs-n{display:block;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
+  .guides-cta{display:inline-flex;align-items:center;gap:.8rem;border:1px solid var(--gold);color:var(--gold);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;padding:.95rem 2rem;transition:background .3s,color .3s}
+  .guides-cta:hover{background:var(--gold);color:var(--bg)}
   @media (max-width:760px){
     .details{padding:1rem 1.2rem}
     .details-head{padding:.9rem 1rem}
@@ -976,6 +985,7 @@ gtag('config', 'G-FL9FTY3GKB');
       <li><a href="/id/#spaces">Spaces<span class="jp">空間</span></a></li>
       <li><a href="/id/#sleep">Essentials<span class="jp">約束</span></a></li>
       <li><a href="/id/#journal">Journal<span class="jp">医師の言葉</span></a></li>
+      <li><a class="guide-hub-link" href="/guide/id/">Guides<span class="jp">周辺ガイド</span></a></li>
       <li><a href="/id/#booking">Booking<span class="jp">予約</span></a></li>
     </ul>
   </nav>
@@ -1021,7 +1031,8 @@ gtag('config', 'G-FL9FTY3GKB');
       <li><a href="/id/#spaces"><span class="num">04</span><span class="en">Spaces</span><span class="jp">空間</span></a></li>
       <li><a href="/id/#sleep"><span class="num">05</span><span class="en">6 Essentials</span><span class="jp">約束</span></a></li>
       <li><a href="/id/#journal"><span class="num">06</span><span class="en">Journal</span><span class="jp">医師の言葉</span></a></li>
-      <li><a href="/id/#booking"><span class="num">07</span><span class="en">Booking</span><span class="jp">予約</span></a></li>
+      <li><a class="guide-hub-link" href="/guide/id/"><span class="num">07</span><span class="en">Local Guides</span><span class="jp">周辺ガイド</span></a></li>
+      <li><a href="/id/#booking"><span class="num">08</span><span class="en">Booking</span><span class="jp">予約</span></a></li>
     </ul>
     <aside class="menu-aside">
       <h5>muslim-friendly STAY TOKYO</h5>
@@ -1616,8 +1627,22 @@ gtag('config', 'G-FL9FTY3GKB');
   <div class="guides-inner">
     <div class="eyebrow">Local Guide</div>
     <h2 data-i18n="guides.h2">Panduan Lokal</h2>
-    <p class="guides-intro" data-i18n="guides.intro">Panduan dari kami tentang lingkungan sekitar — tempat makan halal, tempat salat, dan cara merencanakan hari-hari Anda di Tokyo dari vila.</p>
-    <div class="guides-list" data-i18n="guides.links"><a class="guide-link" href="/guide/halal-food-mosques-asakusa-skytree/id/"><span class="gl-lbl">Panduan 01</span>Restoran halal &amp; masjid dekat Tokyo Skytree &amp; Asakusa</a><a class="guide-link" href="/guide/muslim-friendly-tokyo-itinerary/id/"><span class="gl-lbl">Panduan 02</span>Itinerary Tokyo 4 hari yang ramah Muslim</a><a class="guide-link" href="/guide/ramadan-in-tokyo/id/"><span class="gl-lbl">Panduan 03</span>Ramadan di Tokyo — tanggal, buka puasa &amp; jam puasa</a><a class="guide-link" href="/guide/muslim-family-villa-tokyo/id/"><span class="gl-lbl">Panduan 04</span>Hotel atau vila privat? Panduan untuk keluarga Muslim</a><a class="guide-link" href="/guide/sakura-eid-2027-tokyo/id/"><span class="gl-lbl">Panduan 05</span>Sakura &amp; Lebaran 2027 — Tokyo setelah Ramadan</a></div>
+    <p class="guides-intro" data-i18n="guides.intro">Panduan dari kami tentang lingkungan sekitar — tempat makan halal, tempat salat, dan cara merencanakan hari-hari Anda di Tokyo dari vila. Kelimanya ada di halaman tersendiri.</p>
+    <div class="guides-strip">
+      <a class="gs-card guide-hub-link" href="/guide/id/">
+        <span class="gs-img" style="background-image:url('guide/img/halal-plate.jpg')"></span>
+        <span class="gs-t" data-i18n="guides.c1"><span class="gs-n">Panduan 01</span>Restoran halal &amp; masjid dekat Tokyo Skytree &amp; Asakusa</span>
+      </a>
+      <a class="gs-card guide-hub-link" href="/guide/id/">
+        <span class="gs-img" style="background-image:url('guide/img/skytree-day.jpg')"></span>
+        <span class="gs-t" data-i18n="guides.c2"><span class="gs-n">Panduan 02</span>Itinerary Tokyo 4 hari yang ramah Muslim</span>
+      </a>
+      <a class="gs-card guide-hub-link" href="/guide/id/">
+        <span class="gs-img" style="background-image:url('guide/img/sakura-night.jpg')"></span>
+        <span class="gs-t" data-i18n="guides.c3"><span class="gs-n">Panduan 05</span>Sakura &amp; Lebaran 2027 — Tokyo setelah Ramadan</span>
+      </a>
+    </div>
+    <a class="guides-cta guide-hub-link" href="/guide/id/" data-i18n="guides.cta">Baca semua panduan lokal →</a>
   </div>
 </section>
 
@@ -1635,22 +1660,22 @@ gtag('config', 'G-FL9FTY3GKB');
           <button type="button" id="cal-next" aria-label="Next month">›</button>
         </div>
       </div>
-      <div class="avail-cal-months" id="cal-months"><div class="cal-month"><h4>Agustus 2026</h4><div class="cal-grid"><span class="dow">M</span><span class="dow">S</span><span class="dow">S</span><span class="dow">R</span><span class="dow">K</span><span class="dow">J</span><span class="dow">S</span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day past">1</span><span class="cal-day past">2</span><span class="cal-day past">3</span><span class="cal-day past">4</span><span class="cal-day past">5</span><span class="cal-day past">6</span><span class="cal-day past">7</span><span class="cal-day past">8</span><span class="cal-day past">9</span><span class="cal-day past">10</span><span class="cal-day past">11</span><span class="cal-day past">12</span><span class="cal-day open">13</span><span class="cal-day open">14</span><span class="cal-day open">15</span><span class="cal-day open">16</span><span class="cal-day open">17</span><span class="cal-day open">18</span><span class="cal-day open">19</span><span class="cal-day open">20</span><span class="cal-day open">21</span><span class="cal-day closed">22</span><span class="cal-day closed">23</span><span class="cal-day closed">24</span><span class="cal-day closed">25</span><span class="cal-day closed">26</span><span class="cal-day closed">27</span><span class="cal-day open">28</span><span class="cal-day open">29</span><span class="cal-day closed">30</span><span class="cal-day closed">31</span></div></div><div class="cal-month"><h4>September 2026</h4><div class="cal-grid"><span class="dow">M</span><span class="dow">S</span><span class="dow">S</span><span class="dow">R</span><span class="dow">K</span><span class="dow">J</span><span class="dow">S</span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day closed">1</span><span class="cal-day closed">2</span><span class="cal-day closed">3</span><span class="cal-day closed">4</span><span class="cal-day open">5</span><span class="cal-day open">6</span><span class="cal-day open">7</span><span class="cal-day open">8</span><span class="cal-day open">9</span><span class="cal-day open">10</span><span class="cal-day open">11</span><span class="cal-day closed">12</span><span class="cal-day closed">13</span><span class="cal-day open">14</span><span class="cal-day open">15</span><span class="cal-day closed">16</span><span class="cal-day closed">17</span><span class="cal-day closed">18</span><span class="cal-day open">19</span><span class="cal-day closed">20</span><span class="cal-day closed">21</span><span class="cal-day open">22</span><span class="cal-day open">23</span><span class="cal-day open">24</span><span class="cal-day open">25</span><span class="cal-day closed">26</span><span class="cal-day open">27</span><span class="cal-day open">28</span><span class="cal-day closed">29</span><span class="cal-day closed">30</span></div></div></div>
+      <div class="avail-cal-months" id="cal-months"><div class="cal-month"><h4>Agustus 2026</h4><div class="cal-grid"><span class="dow">M</span><span class="dow">S</span><span class="dow">S</span><span class="dow">R</span><span class="dow">K</span><span class="dow">J</span><span class="dow">S</span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day past">1</span><span class="cal-day past">2</span><span class="cal-day past">3</span><span class="cal-day past">4</span><span class="cal-day past">5</span><span class="cal-day past">6</span><span class="cal-day past">7</span><span class="cal-day past">8</span><span class="cal-day past">9</span><span class="cal-day past">10</span><span class="cal-day past">11</span><span class="cal-day past">12</span><span class="cal-day past">13</span><span class="cal-day past">14</span><span class="cal-day past">15</span><span class="cal-day past">16</span><span class="cal-day open">17</span><span class="cal-day open">18</span><span class="cal-day open">19</span><span class="cal-day open">20</span><span class="cal-day open">21</span><span class="cal-day closed">22</span><span class="cal-day closed">23</span><span class="cal-day closed">24</span><span class="cal-day closed">25</span><span class="cal-day closed">26</span><span class="cal-day closed">27</span><span class="cal-day open">28</span><span class="cal-day open">29</span><span class="cal-day closed">30</span><span class="cal-day closed">31</span></div></div><div class="cal-month"><h4>September 2026</h4><div class="cal-grid"><span class="dow">M</span><span class="dow">S</span><span class="dow">S</span><span class="dow">R</span><span class="dow">K</span><span class="dow">J</span><span class="dow">S</span><span class="cal-day blank"></span><span class="cal-day blank"></span><span class="cal-day closed">1</span><span class="cal-day closed">2</span><span class="cal-day closed">3</span><span class="cal-day closed">4</span><span class="cal-day open">5</span><span class="cal-day open">6</span><span class="cal-day open">7</span><span class="cal-day open">8</span><span class="cal-day open">9</span><span class="cal-day open">10</span><span class="cal-day open">11</span><span class="cal-day closed">12</span><span class="cal-day closed">13</span><span class="cal-day open">14</span><span class="cal-day open">15</span><span class="cal-day closed">16</span><span class="cal-day closed">17</span><span class="cal-day closed">18</span><span class="cal-day open">19</span><span class="cal-day closed">20</span><span class="cal-day closed">21</span><span class="cal-day open">22</span><span class="cal-day open">23</span><span class="cal-day open">24</span><span class="cal-day open">25</span><span class="cal-day closed">26</span><span class="cal-day open">27</span><span class="cal-day open">28</span><span class="cal-day closed">29</span><span class="cal-day closed">30</span></div></div></div>
       <div class="avail-cal-legend">
         <span class="lg lg-open" data-i18n="booking.cal.open">Tersedia</span>
         <span class="lg lg-closed" data-i18n="booking.cal.closed">Terisi</span>
-        <span class="avail-cal-updated" id="cal-updated">Diperbarui: 2026-08-13</span>
+        <span class="avail-cal-updated" id="cal-updated">Diperbarui: 2026-08-17</span>
       </div>
       <p class="avail-cal-hint" data-i18n="booking.cal.hint">Ketuk tanggal yang tersedia untuk mengisi check-in dan check-out Anda di bawah.</p>
     </div>
     <form class="book-widget" id="book-widget">
       <div class="bw-field">
         <label for="bw-checkin" data-i18n="booking.checkin">Check-in</label>
-        <input type="date" id="bw-checkin" required="" min="2026-08-13">
+        <input type="date" id="bw-checkin" required="" min="2026-08-17">
       </div>
       <div class="bw-field">
         <label for="bw-checkout" data-i18n="booking.checkout">Check-out</label>
-        <input type="date" id="bw-checkout" required="" min="2026-08-14">
+        <input type="date" id="bw-checkout" required="" min="2026-08-18">
       </div>
       <div class="bw-field">
         <label for="bw-guests" data-i18n="booking.guests">Tamu</label>
@@ -1705,6 +1730,7 @@ gtag('config', 'G-FL9FTY3GKB');
       <ul>
         <li><a href="/id/#sleep">6 Essentials</a></li>
         <li><a href="/id/#journal">Journal</a></li>
+        <li><a class="guide-hub-link" href="/guide/id/">Local Guides</a></li>
         <li><a href="/id/#booking">Booking</a></li>
       </ul>
     </div>
@@ -1954,8 +1980,11 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.details": "詳細情報",
       "bookBar.detailsShort": "詳細情報",
       "guides.h2": "周辺ハラールガイド",
-      "guides.intro": "スカイツリー・浅草エリアのハラール レストラン、モスク、モデルコースをまとめた、宿発のローカルガイドです。",
-      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/'><span class='gl-lbl'>Guide 01</span>スカイツリー・浅草周辺のハラール飲食店とモスク（英語）</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/'><span class='gl-lbl'>Guide 02</span>ムスリム向け 東京4日間モデルコース（英語）</a><a class='guide-link' href='/guide/ramadan-in-tokyo/'><span class='gl-lbl'>Guide 03</span>東京のラマダン — 日程・イフタール（英語）</a><a class='guide-link' href='/guide/muslim-family-villa-tokyo/'><span class='gl-lbl'>Guide 04</span>ホテルと一棟貸し、ムスリム家族はどちらを選ぶべきか（英語）</a><a class='guide-link' href='/guide/sakura-eid-2027-tokyo/'><span class='gl-lbl'>Guide 05</span>桜×イード2027 — ラマダン明けの東京（英語）</a>"
+      "guides.intro": "スカイツリー・浅草エリアのハラール飲食店、モスク、モデルコースをまとめた、宿発のローカルガイド。全5本を専用ページにまとめています（英語・インドネシア語・マレー語）。",
+      "guides.c1": "<span class='gs-n'>Guide 01</span>スカイツリー・浅草周辺のハラール飲食店とモスク",
+      "guides.c2": "<span class='gs-n'>Guide 02</span>ムスリム向け 東京4日間モデルコース",
+      "guides.c3": "<span class='gs-n'>Guide 05</span>桜×イード2027 — ラマダン明けの東京",
+      "guides.cta": "ローカルガイドをすべて読む →",
     },
     en: {
       "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
@@ -2175,8 +2204,11 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.details": "Property Details",
       "bookBar.detailsShort": "Details",
       "guides.h2": "Local Guides",
-      "guides.intro": "Our own guides to the neighborhood — where to eat halal, where to pray, and how to plan your Tokyo days from the villa.",
-      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/'><span class='gl-lbl'>Guide 01</span>Halal food &amp; mosques near Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/'><span class='gl-lbl'>Guide 02</span>A 4-day Muslim-friendly Tokyo itinerary</a><a class='guide-link' href='/guide/ramadan-in-tokyo/'><span class='gl-lbl'>Guide 03</span>Ramadan in Tokyo — dates, iftar &amp; fasting hours</a><a class='guide-link' href='/guide/muslim-family-villa-tokyo/'><span class='gl-lbl'>Guide 04</span>Hotel or private villa? A Muslim family's guide</a><a class='guide-link' href='/guide/sakura-eid-2027-tokyo/'><span class='gl-lbl'>Guide 05</span>Sakura &amp; Eid 2027 — Tokyo right after Ramadan</a>"
+      "guides.intro": "Our own guides to the neighborhood — where to eat halal, where to pray, and how to plan your Tokyo days from the villa. All five live on their own page.",
+      "guides.c1": "<span class='gs-n'>Guide 01</span>Halal food &amp; mosques near Tokyo Skytree &amp; Asakusa",
+      "guides.c2": "<span class='gs-n'>Guide 02</span>A 4-day Muslim-friendly Tokyo itinerary",
+      "guides.c3": "<span class='gs-n'>Guide 05</span>Sakura &amp; Eid 2027 — Tokyo right after Ramadan",
+      "guides.cta": "Read all local guides →",
     },
     id: {
       "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
@@ -2396,8 +2428,11 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.details": "Detail Properti",
       "bookBar.detailsShort": "Detail",
       "guides.h2": "Panduan Lokal",
-      "guides.intro": "Panduan dari kami tentang lingkungan sekitar — tempat makan halal, tempat salat, dan cara merencanakan hari-hari Anda di Tokyo dari vila.",
-      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/id/'><span class='gl-lbl'>Panduan 01</span>Restoran halal &amp; masjid dekat Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/id/'><span class='gl-lbl'>Panduan 02</span>Itinerary Tokyo 4 hari yang ramah Muslim</a><a class='guide-link' href='/guide/ramadan-in-tokyo/id/'><span class='gl-lbl'>Panduan 03</span>Ramadan di Tokyo — tanggal, buka puasa &amp; jam puasa</a><a class='guide-link' href='/guide/muslim-family-villa-tokyo/id/'><span class='gl-lbl'>Panduan 04</span>Hotel atau vila privat? Panduan untuk keluarga Muslim</a><a class='guide-link' href='/guide/sakura-eid-2027-tokyo/id/'><span class='gl-lbl'>Panduan 05</span>Sakura &amp; Lebaran 2027 — Tokyo setelah Ramadan</a>"
+      "guides.intro": "Panduan dari kami tentang lingkungan sekitar — tempat makan halal, tempat salat, dan cara merencanakan hari-hari Anda di Tokyo dari vila. Kelimanya ada di halaman tersendiri.",
+      "guides.c1": "<span class='gs-n'>Panduan 01</span>Restoran halal &amp; masjid dekat Tokyo Skytree &amp; Asakusa",
+      "guides.c2": "<span class='gs-n'>Panduan 02</span>Itinerary Tokyo 4 hari yang ramah Muslim",
+      "guides.c3": "<span class='gs-n'>Panduan 05</span>Sakura &amp; Lebaran 2027 — Tokyo setelah Ramadan",
+      "guides.cta": "Baca semua panduan lokal →",
     },
     ms: {
       "meta.title": "muslim-friendly STAY TOKYO | THE HOSPITEL by Dr.",
@@ -2617,8 +2652,11 @@ gtag('config', 'G-FL9FTY3GKB');
       "bookBar.details": "Perincian Kediaman",
       "bookBar.detailsShort": "Perincian",
       "guides.h2": "Panduan Tempatan",
-      "guides.intro": "Panduan daripada kami tentang kawasan sekitar — tempat makan halal, tempat solat, dan cara merancang hari anda di Tokyo dari vila.",
-      "guides.links": "<a class='guide-link' href='/guide/halal-food-mosques-asakusa-skytree/ms/'><span class='gl-lbl'>Panduan 01</span>Restoran halal &amp; masjid berhampiran Tokyo Skytree &amp; Asakusa</a><a class='guide-link' href='/guide/muslim-friendly-tokyo-itinerary/ms/'><span class='gl-lbl'>Panduan 02</span>Itinerari Tokyo 4 hari mesra Muslim</a><a class='guide-link' href='/guide/ramadan-in-tokyo/ms/'><span class='gl-lbl'>Panduan 03</span>Ramadan di Tokyo — tarikh, iftar &amp; waktu puasa</a><a class='guide-link' href='/guide/muslim-family-villa-tokyo/ms/'><span class='gl-lbl'>Panduan 04</span>Hotel atau vila persendirian? Panduan keluarga Muslim</a><a class='guide-link' href='/guide/sakura-eid-2027-tokyo/ms/'><span class='gl-lbl'>Panduan 05</span>Sakura &amp; Raya 2027 — Tokyo selepas Ramadan</a>"
+      "guides.intro": "Panduan daripada kami tentang kawasan sekitar — tempat makan halal, tempat solat, dan cara merancang hari anda di Tokyo dari vila. Kesemua lima panduan ada di halaman tersendiri.",
+      "guides.c1": "<span class='gs-n'>Panduan 01</span>Restoran halal &amp; masjid berhampiran Tokyo Skytree &amp; Asakusa",
+      "guides.c2": "<span class='gs-n'>Panduan 02</span>Itinerari Tokyo 4 hari mesra Muslim",
+      "guides.c3": "<span class='gs-n'>Panduan 05</span>Sakura &amp; Raya 2027 — Tokyo selepas Ramadan",
+      "guides.cta": "Baca semua panduan tempatan →",
     }
   };
 
@@ -2642,6 +2680,9 @@ gtag('config', 'G-FL9FTY3GKB');
       if (btns[j].getAttribute('data-lang') === lang) btns[j].classList.add('is-active');
       else btns[j].classList.remove('is-active');
     }
+    var hubHref = (lang === 'id') ? '/guide/id/' : (lang === 'ms') ? '/guide/ms/' : '/guide/';
+    var hubLinks = document.querySelectorAll('a.guide-hub-link');
+    for (var h = 0; h < hubLinks.length; h++) hubLinks[h].setAttribute('href', hubHref);
     try { localStorage.setItem('hospitel_lang', lang); } catch(e) {}
     if (window.__renderAvailCal) window.__renderAvailCal();
   }
