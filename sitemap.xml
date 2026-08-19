@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://thehospitel.jp/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/?lang=ja"/>
@@ -174,7 +174,7 @@
   </url>
   <url>
     <loc>https://thehospitel.jp/id/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/?lang=ja"/>
@@ -185,7 +185,7 @@
   </url>
   <url>
     <loc>https://thehospitel.jp/ms/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="https://thehospitel.jp/?lang=ja"/>
