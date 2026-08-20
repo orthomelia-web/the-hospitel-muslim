@@ -14,7 +14,7 @@
 - Sleep design: doctor-curated (premium mattress, warm lighting, herbal bath and tea)
 - House rules: entirely non-smoking, no pets, no alcohol or pork brought in
 - Booking: direct with PayPal or credit card at https://thehospitel.jp/book.html — also listed on Agoda and Booking.com. Long stays (28+ nights) welcome.
-- Site languages: English, Japanese, Indonesian (Bahasa Indonesia), Malay (Bahasa Melayu)
+- Site languages: English, Japanese, Indonesian (Bahasa Indonesia), Malay (Bahasa Melayu), Arabic
 - Contact: info@thehospitel.jp
 - Operator: Ishi no Fudosan K.K. (医師の不動産株式会社), founded by Dr. Yusuke Sato, MD
 
@@ -23,6 +23,7 @@
 - [Home (English)](https://thehospitel.jp/)
 - [Bahasa Indonesia](https://thehospitel.jp/id/)
 - [Bahasa Melayu](https://thehospitel.jp/ms/)
+- [Arabic / العربية](https://thehospitel.jp/ar/)
 - [Book directly](https://thehospitel.jp/book.html)
 - [Local Guide hub](https://thehospitel.jp/guide/)
 - [Halal food & mosques around Asakusa & Tokyo Skytree](https://thehospitel.jp/guide/halal-food-mosques-asakusa-skytree/)
