@@ -269,4 +269,34 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://thehospitel.jp/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/"/>
   </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/where-to-pray-in-tokyo/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/where-to-pray-in-tokyo/id/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+  </url>
+  <url>
+    <loc>https://thehospitel.jp/guide/where-to-pray-in-tokyo/ms/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/id/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/ms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thehospitel.jp/guide/where-to-pray-in-tokyo/"/>
+  </url>
 </urlset>
