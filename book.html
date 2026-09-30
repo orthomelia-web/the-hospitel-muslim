@@ -3,6 +3,7 @@
 <head>
 <!-- inase-noga-switch 2026-08-19 内部トラフィック除外: ?noga=1 で計測停止 / ?noga=0 で解除 -->
 <script>(function(){try{var s=location.search;if(s.indexOf('noga=1')>-1){try{localStorage.setItem('_noga','1')}catch(e){}}if(s.indexOf('noga=0')>-1){try{localStorage.removeItem('_noga')}catch(e){}}var off=false;try{off=localStorage.getItem('_noga')==='1'}catch(e){}if(navigator.webdriver||/Headless|PhantomJS|Puppeteer/i.test(navigator.userAgent))off=true;if(off){window['ga-disable-G-FL9FTY3GKB']=true;}}catch(e){}})();</script>
+<script>(function(){try{var m=location.search.match(/[?&](?:code|voucher)=([A-Za-z0-9_-]{2,30})(?:&|$)/);if(m){localStorage.setItem('hospitel_voucher',JSON.stringify({c:m[1].toUpperCase(),t:Date.now()}))}}catch(e){}})();</script>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -44,6 +45,8 @@
 
   .note-bar{flex-shrink:0;padding:.5rem 1.4rem;background:var(--surface);border-bottom:1px solid var(--line-soft);font-size:.68rem;color:var(--ink-dim);letter-spacing:.06em;text-align:center}
   .note-bar b{color:var(--gold);font-weight:500}
+  .note-bar .voucher-note{display:block;margin-top:.2rem}
+  .note-bar .voucher-note[hidden]{display:none}
 
   .frame-wrap{flex:1;min-height:0;background:#fff}
   .frame-wrap iframe{display:block;width:100%;height:100%;border:none}
@@ -74,6 +77,7 @@ gtag('config', 'G-FL9FTY3GKB');
 
 <div class="note-bar">
   <span data-i18n="note">公式サイト限定・手数料なしの<b>ベストレート</b>でご予約いただけます。お支払い（PayPal）は新しいウィンドウで安全に開きます。</span>
+  <span class="voucher-note" id="voucher-note" hidden></span>
 </div>
 
 <div class="frame-wrap">
@@ -86,22 +90,26 @@ gtag('config', 'G-FL9FTY3GKB');
     ja: {
       back: 'サイトへ戻る',
       note: '公式サイト限定・手数料なしの<b>ベストレート</b>でご予約いただけます。お支払い（PayPal）は新しいウィンドウで安全に開きます。',
-      title: 'ご予約 | muslim-friendly STAY TOKYO'
+      title: 'ご予約 | muslim-friendly STAY TOKYO',
+      voucher: 'クーポンコード <b>{c}</b> を適用しています'
     },
     en: {
       back: 'Back to site',
       note: 'Book here at our <b>best rate</b> — no commission, official site only. Secure payment (PayPal) opens in a new window.',
-      title: 'Reservation | muslim-friendly STAY TOKYO'
+      title: 'Reservation | muslim-friendly STAY TOKYO',
+      voucher: 'Voucher code <b>{c}</b> applied'
     },
     id: {
       back: 'Kembali ke situs',
       note: 'Pesan di sini dengan <b>harga terbaik</b> — tanpa komisi, hanya di situs resmi. Pembayaran aman (PayPal) terbuka di jendela baru.',
-      title: 'Reservasi | muslim-friendly STAY TOKYO'
+      title: 'Reservasi | muslim-friendly STAY TOKYO',
+      voucher: 'Kode voucher <b>{c}</b> diterapkan'
     },
     ms: {
       back: 'Kembali ke laman',
       note: 'Tempah di sini pada <b>kadar terbaik</b> — tiada komisen, laman rasmi sahaja. Pembayaran selamat (PayPal) dibuka di tetingkap baharu.',
-      title: 'Tempahan | muslim-friendly STAY TOKYO'
+      title: 'Tempahan | muslim-friendly STAY TOKYO',
+      voucher: 'Kod baucar <b>{c}</b> digunakan'
     }
   };
 
@@ -123,11 +131,27 @@ gtag('config', 'G-FL9FTY3GKB');
 
   /* Build Beds24 booking-page URL from query params (Beds24 UI supports ja/en only here) */
   var b24lang = (lang === 'ja') ? 'ja' : 'en';
-  var url = 'https://beds24.com/booking2.php?propid=332409&referer=iframe&lang=' + b24lang;
+  /* Influencer voucher: ?code= on any page is kept 30 days (head script) and pre-applied on Beds24 via &voucher=.
+     referer records the code too, so the source stays visible even if the guest removes it. */
+  var voucher = (params.get('code') || params.get('voucher') || '').toUpperCase();
+  if (!/^[A-Z0-9_-]{2,30}$/.test(voucher)) {
+    voucher = '';
+    try {
+      var saved = JSON.parse(localStorage.getItem('hospitel_voucher') || 'null');
+      if (saved && /^[A-Z0-9_-]{2,30}$/.test(saved.c) && Date.now() - saved.t < 30 * 864e5) voucher = saved.c;
+    } catch(e) {}
+  }
+  var url = 'https://beds24.com/booking2.php?propid=332409&referer=' + (voucher ? 'iframe-' + voucher : 'iframe') + '&lang=' + b24lang;
   ['checkin','numnight','numadult'].forEach(function(k){
     var v = params.get(k);
     if (v && /^[0-9-]{1,10}$/.test(v)) url += '&' + k + '=' + encodeURIComponent(v);
   });
+  if (voucher) {
+    url += '&voucher=' + voucher;
+    var vn = document.getElementById('voucher-note');
+    vn.innerHTML = I18N[lang].voucher.replace('{c}', voucher);
+    vn.hidden = false;
+  }
   document.getElementById('booking-frame').src = url;
 })();
 </script>
