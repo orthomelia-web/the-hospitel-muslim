@@ -3,7 +3,7 @@
 <head>
 <!-- inase-noga-switch 2026-08-19 内部トラフィック除外: ?noga=1 で計測停止 / ?noga=0 で解除 -->
 <script>(function(){try{var s=location.search;if(s.indexOf('noga=1')>-1){try{localStorage.setItem('_noga','1')}catch(e){}}if(s.indexOf('noga=0')>-1){try{localStorage.removeItem('_noga')}catch(e){}}var off=false;try{off=localStorage.getItem('_noga')==='1'}catch(e){}if(navigator.webdriver||/Headless|PhantomJS|Puppeteer/i.test(navigator.userAgent))off=true;if(off){window['ga-disable-G-FL9FTY3GKB']=true;}}catch(e){}})();</script>
-<script>(function(){try{var m=location.search.match(/[?&](?:code|voucher)=([A-Za-z0-9_-]{2,30})(?:&|$)/);if(m){localStorage.setItem('hospitel_voucher',JSON.stringify({c:m[1].toUpperCase(),t:Date.now()}))}}catch(e){}})();</script>
+<script>(function(){try{var m=location.search.match(/[?&](?:code|voucher)=([A-Za-z0-9_-]{2,30})(?:&|$)/);if(m){localStorage.setItem('hospitel_voucher',JSON.stringify({c:m[1].toUpperCase(),t:Date.now()}))}var r=location.search.match(/[?&]src=([A-Za-z0-9._-]{2,30})(?:&|$)/)||location.search.match(/[?&]utm_source=([A-Za-z0-9._-]{2,30})(?:&|$)/);if(r){localStorage.setItem('hospitel_src',JSON.stringify({s:r[1].toLowerCase(),t:Date.now()}))}}catch(e){}})();</script>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -141,7 +141,18 @@ gtag('config', 'G-FL9FTY3GKB');
       if (saved && /^[A-Z0-9_-]{2,30}$/.test(saved.c) && Date.now() - saved.t < 30 * 864e5) voucher = saved.c;
     } catch(e) {}
   }
-  var url = 'https://beds24.com/booking2.php?propid=332409&referer=' + (voucher ? 'iframe-' + voucher : 'iframe') + '&lang=' + b24lang;
+  /* Traffic source without a discount: ?src= or ?utm_source= on any page is kept 30 days (head script)
+     and recorded on the Beds24 booking as referer "iframe-src-<source>". A voucher takes precedence. */
+  var src = (params.get('src') || params.get('utm_source') || '').toLowerCase();
+  if (!/^[a-z0-9._-]{2,30}$/.test(src)) {
+    src = '';
+    try {
+      var savedSrc = JSON.parse(localStorage.getItem('hospitel_src') || 'null');
+      if (savedSrc && /^[a-z0-9._-]{2,30}$/.test(savedSrc.s) && Date.now() - savedSrc.t < 30 * 864e5) src = savedSrc.s;
+    } catch(e) {}
+  }
+  var referer = voucher ? 'iframe-' + voucher : (src ? 'iframe-src-' + src : 'iframe');
+  var url = 'https://beds24.com/booking2.php?propid=332409&referer=' + encodeURIComponent(referer) + '&lang=' + b24lang;
   ['checkin','numnight','numadult'].forEach(function(k){
     var v = params.get(k);
     if (v && /^[0-9-]{1,10}$/.test(v)) url += '&' + k + '=' + encodeURIComponent(v);
