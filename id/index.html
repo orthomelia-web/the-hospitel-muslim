@@ -2950,7 +2950,7 @@ gtag('config', 'G-FL9FTY3GKB');
     } catch(e) {}
     var saved = null;
     try { saved = localStorage.getItem('hospitel_lang'); } catch(e) {}
-    var initial = urlLang || saved || 'id';
+    var initial = urlLang || 'id';
     setLang(initial);
     document.querySelectorAll('.lang-toggle button').forEach(function(btn){
       btn.addEventListener('click', function(){
